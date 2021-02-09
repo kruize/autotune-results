@@ -5,6 +5,6 @@
 ## Tunables:
 MaxInlineLevel range used is 0-500
 
-[Trials Vs MaxInlineLevel](trialsVSmaxinlinelevel.png)
+![Trials Vs MaxInlineLevel](trialsVSmaxinlinelevel.png)
 
-[Responsetime Vs MaxInlineLevel](responsetimeVSmaxinlinelevel.png)
+![Responsetime Vs MaxInlineLevel](responsetimeVSmaxinlinelevel.png)

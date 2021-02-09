@@ -6,6 +6,6 @@
 cpurequest
 memrequest
 
-[Responsetime](responsetime.png)
+![Responsetime](responsetime.png)
 
-[Responsetime-with renaissance](responsetime-withrenaissance.png)
+![Responsetime-with renaissance](responsetime-withrenaissance.png)

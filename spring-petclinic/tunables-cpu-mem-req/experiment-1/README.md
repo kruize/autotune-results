@@ -6,4 +6,4 @@
 cpurequest
 memrequest
 
-[Responsetime](responsetime.png)
+![Responsetime](responsetime.png)

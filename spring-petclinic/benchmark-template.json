@@ -15,9 +15,9 @@
    "layer_details": "java hotspot tunables"
    }
   ]
- "tunables" : [
+ "tunables": [
    {
-   "cpurequest",
+   "cpurequest"
    "memrequest"
    },
    {
