@@ -1,0 +1,22 @@
+{
+ "autotuneVersion" : "0.0.1",
+ "git_url" : "https://github.com/kruize/benchmarks.git",
+ "benchmark" : "spring-petclinic",	
+ "sla_class" : "responsetime",
+ "layers": [
+   "layer_level": 1,
+   "layer_name": "hotspot",
+   "layer_details": "java hotspot tunables"
+  ]
+ "tunables" : [
+   "-XX:MaxInlineLevel"
+  ]
+ "image" : "kusumach/spring-petclinic:2.4.0_hotspot",
+ "iterations" : 3,
+ "warmupIterations" : 5,
+ "warmupTime" : "60 s",
+ "measurementIterations" : 3,
+ "measurementTime" : "60 s",
+ "users" : 400,
+ "instances" : 1
+}
