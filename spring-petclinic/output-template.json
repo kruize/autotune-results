@@ -1,21 +1,48 @@
  
 {
  "autotuneVersion" : "0.0.1",
- "benchmark" : "spring-petclinic",
- "sla_class" : "responsetime",
- "layers": {
-  [
-    "layer_level": 1,
-    "layer_name": "hotspot",
-    "layer_details": "java hotspot tunables"
-   ]
-  }
- "tunables" : {
-  "-XX:MaxInlineLevel=23"
- }
- "jdkVersion" : "15-ea",
- "vmName" : "OpenJDK 64-Bit Server VM",
- "vmVersion" : "15-ea+16-681",
+ "application_name": "spring-petclinic",
+ "objective_function": "transaction_response_time",
+ "function_variables": [{
+  "value_type": "double",
+  "name": "transaction_response_time",
+  "query_url":
+  }],
+ "layers": [{
+  "layer_level": 0,
+  "tunables": [
+   {
+   "value_type": "double",
+   "lower_bound": "",
+   "name": "memoryRequest",
+   "upper_bound": ""
+    },
+    {
+    "value_type": "double",
+    "lower_bound": "",
+    "name": "cpuRequest",
+    "upper_bound": ""
+    }
+   ],
+   "layer_name": "container",
+   "layer_details": "generic container tunables"
+   },
+   {
+   "layer_level": 1,
+   "tunables": [{
+    "value_type": "integer",
+    "lower_bound": "9",
+    "name": "maxinlinelevel",
+    "upper_bound": "50"
+    }],
+   "layer_name": "hotspot",
+   "layer_details": "hotspot tunables",
+   "jdkVersion" : "15-ea",
+   "vmName" : "OpenJDK 64-Bit Server VM",
+   "vmVersion" : "15-ea+16-681",
+   }],
+ "sla_class": "response_time",
+ "direction": "minimize",
  "iterations" : 1
  "warmupIterations" : 5,
  "warmupTime" : "60 s",
