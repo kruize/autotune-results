@@ -6,15 +6,6 @@ function_variables:
     query_url: ''
 layers:
   - layer_level: 0
-    tunables:
-      - value_type: double
-        lower_bound: 200M
-        name: memoryRequest
-        upper_bound: 1024M
-      - value_type: double
-        lower_bound: '1'
-        name: cpuRequest
-        upper_bound: '3.2'
     layer_name: container
     layer_details: generic container tunables
   - layer_level: 1
@@ -38,12 +29,12 @@ measurementTime: 60 s
 users: 400
 instances: 1
 server_config:
-  - name: perfexperiment.pnq
+  - name: perfexperiment.rdu
   - master_nodes: 3
   - worker_nodes: 3
   - cpu_per_node: 4
   - mem_per_node: 8192M
 client_config:
-  - name: node-0.perfclient.pnq
+  - name: node-0.perfclient.rdu
   - cpu: 4
   - mem: 7810M
