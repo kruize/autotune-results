@@ -1,0 +1,2 @@
+Trials,Throughput,Responsetime,TOTAL_PODS_MEM,TOTAL_PODS_CPU,CPU_MIN,CPU_MAX,MEM_MIN,MEM_MAX,WEB_ERRORS,MAXINLINELEVEL,thrpt_ci,resp_ci,cpu_ci,mem_ci
+1,302.3,826,0,0,0,0,0,0,0,9,8.59,12,0,0

@@ -1,0 +1,2 @@
+Trial,Throughput,Responsetime,Memory_used,CPU_used,cpu_min,cpu_max,mem_min,mem_max,cluster_mem,cluster_cpu,cpu_req,cpu_lim,mem_req,mem_lim
+1,381.933,615.667,380.423,1.270,1.029,1.658,375.000,387.000,19.377,32.279,,2.9,,1024Mi
