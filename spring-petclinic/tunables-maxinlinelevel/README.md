@@ -4,6 +4,7 @@
 
 ## Tunables:
 MaxInlineLevel range used is 9-50
+- value represents maximum number of nested calls that are inlined.
 
 ## Configuration Used:
 CPU_REQUEST=2.87
