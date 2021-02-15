@@ -1,6 +1,6 @@
 # Summary of data
-- Min response time is observed with MaxInlineLevel=13
-- 3.6% reduced response time is observed.
+- Min response time is observed with MaxInlineLevel=48
+- 5.1% reduced response time is observed.
 
 ## Tunables:
 MaxInlineLevel range used is 9-50
