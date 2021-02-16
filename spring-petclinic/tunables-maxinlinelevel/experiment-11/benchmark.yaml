@@ -28,7 +28,7 @@ instances: 1
 cpu_req: 2.87
 mem_req: 669M
 cpu_lim: 3.5
-mem_limit: 1024M
+mem_lim: 1024M
 server_config:
   - name: perfexperiment.rdu
   - master_nodes: 3
@@ -36,6 +36,6 @@ server_config:
   - cpu_per_node: 4
   - mem_per_node: 8192M
 client_config:
-  - name: node-0.perfclient.pnq
+  - name: node-0.perfcheck.rdu
   - cpu: 4
   - mem: 7810M
