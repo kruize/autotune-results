@@ -1,17 +1,18 @@
-# Summary of all experiments
-- Min response time is observed with MaxInlineLevel=13
-- 3.6% reduced response time is observed.
+## Tunables used for these experiments:
+- cpuRequest (container layer)
+	CPU request for a pod
+- memoryRequest (container layer)
+	Memory request for a pod
+- maxinlinelevel (hotspot layer)
+	Maximum number of nested calls that are inlined; default: 9
+- quarkus.thread-pool.core.threads (quarkus layer)
+	The core thread pool size. This number of threads will always be kept alive.
+- quarkus.thread-pool.queue.size (quarkus layer) 
+	The queue size. For most applications this should be unbounded
+- quarkus.datasource.jdbc.min.size (quarkus layer)
+	The datasource pool minimum size; default: 0
+- quarkus.datasource.jdbc.max.size (quarkus layer)
+	The datasource pool maximum size; default: 20
 
-## Tunables:
-MaxInlineLevel range used is 9-50
-- value represents maximum number of nested calls that are inlined.
-
-## Configuration Used:
-CPU_REQUEST=2.87
-MEM_REQUEST=669M
-CPU_LIMIT=3.5
-MEM_LIMIT=1024M
-
-![Responsetime](responsetime.png)
-
-Above graph comparison is based on [experiment-10](https://github.com/kruize/autotune-results/tree/main/spring-petclinic/tunables-maxinlinelevel/experiment-10) data.
+## Summary of Experiments
+- will be updated soon 
