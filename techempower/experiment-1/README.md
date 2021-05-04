@@ -1,4 +1,4 @@
-## ## All the experiments in this folder were run on a shared infrastructure and require to validate on a dedicated infrasture. Manual runs are being run to reproduce the data with the best configuration which will be updated at [manuals] (https://github.com/kruize/autotune-results/tree/main/techempower/experiment-1/manuals)
+## All the experiments in this folder were run on shared infrastructure and require to be validated on a dedicated infrastructure. Manual runs are being run to reproduce the data with the best configuration which will be updated at [manuals](https://github.com/kruize/autotune-results/tree/main/techempower/experiment-1/manuals) dir.
 
 
 # Summary of data
