@@ -4,23 +4,16 @@
 # Summary of data
 - 19.2% reduced response time with optuna optimization tunables.
 - Min response time is observed with following configuration
-cpurequest=1.38 (container layer)
-memrequest=957M (container layer)
-maxinlinelevel=12 (hotspot layer)
-quarkus.thread-pool.core.threads=2 (quarkus layer)
-quarkus.thread-pool.queue.size=58 (quarkus layer)
-quarkus.datasource.jdbc.min.size=5 (quarkus layer)
-quarkus.datasource.jdbc.max.size=28 (quarkus layer)
-
-
-## Tunables:
-- cpuRequest 				Range : 1 - 3.2
-- memoryRequest 			Range: 270MB - 1024MB
-- maxinlinelevel			Range : 9 - 50
-- quarkus.thread-pool.core.threads	Range: 1 - 3
-- quarkus.thread-pool.queue.size	Range: 1 - 100
-- quarkus.datasource.jdbc.min.size	Range: 0 - 10
-- quarkus.datasource.jdbc.max.size	Range: 20 - 50
+```
+   [Layer]            [Tunable]              [Default, Range]    Best Config
+[Quarkus]   quarkus.thread-pool.core-threads   [1, 1-3]            =   2
+[Quarkus]   quarkus.thread-pool.queue-size     [unbounded, 1-100]  =  58
+[Quarkus]   quarkus.datasource.jdbc.min.size   [0, 0-50]           =   5
+[Quarkus]   quarkus.datasource.jdbc.max.size   [20,2-50]           =  28
+[Hotspot]   maxinlinelevel                     [9, 9-50]           =  12
+[Container] cpuRequest                         [None, 1-3.2]       =  1.38
+[Container] memoryRequest                      [None, 270M-1024M]  =  957M
+```
 
 ![Responsetime](responsetime.png)
 
