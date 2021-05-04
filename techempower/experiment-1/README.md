@@ -1,3 +1,6 @@
+## ## All the experiments in this folder were run on a shared infrastructure and require to validate on a dedicated infrasture. Manual runs are being run to reproduce the data with the best configuration which will be updated at [manuals] (https://github.com/kruize/autotune-results/tree/main/techempower/experiment-1/manuals)
+
+
 # Summary of data
 - 19.2% reduced response time with optuna optimization tunables.
 - Min response time is observed with following configuration

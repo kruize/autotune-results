@@ -1,14 +1,14 @@
-# Summary of data
-- 19.2% reduced response time with optuna optimization tunables.
-- Min response time is observed with following configuration
-cpurequest=1.38 (container layer)
-memrequest=957M (container layer)
-maxinlinelevel=12 (hotspot layer)
-quarkus.thread-pool.core.threads=2 (quarkus layer)
-quarkus.thread-pool.queue.size=58 (quarkus layer)
-quarkus.datasource.jdbc.min.size=5 (quarkus layer)
-quarkus.datasource.jdbc.max.size=28 (quarkus layer)
+## All the experiments in this folder were run on a shared infrastructure and require to validate on a dedicated infrasture. Manual runs are being run to reproduce the data with the best configuration which will be updated at [manuals] (https://github.com/kruize/autotune-results/tree/main/techempower/experiment-2/manuals)
 
+# Summary of data
+- Min response time is observed with following configuration
+cpurequest=1.01 (container layer)
+memrequest=556M (container layer)
+maxinlinelevel=11 (hotspot layer)
+quarkus.thread-pool.core.threads=7 (quarkus layer)
+quarkus.thread-pool.queue.size=450 (quarkus layer)
+quarkus.datasource.jdbc.min.size=6 (quarkus layer)
+quarkus.datasource.jdbc.max.size=31 (quarkus layer)
 
 ## Tunables:
 - cpuRequest 				Range : 1 - 3.2
