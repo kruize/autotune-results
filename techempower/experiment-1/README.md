@@ -8,8 +8,8 @@
    [Layer]            [Tunable]              [Default, Range]    Best Config
 [Quarkus]   quarkus.thread-pool.core-threads   [1, 1-3]            =   2
 [Quarkus]   quarkus.thread-pool.queue-size     [unbounded, 1-100]  =  58
-[Quarkus]   quarkus.datasource.jdbc.min.size   [0, 0-50]           =   5
-[Quarkus]   quarkus.datasource.jdbc.max.size   [20,20-50]           =  28
+[Quarkus]   quarkus.datasource.jdbc.min-size   [0, 0-10]           =   5
+[Quarkus]   quarkus.datasource.jdbc.max-size   [20, 20-50]         =  28
 [Hotspot]   maxinlinelevel                     [9, 9-50]           =  12
 [Container] cpuRequest                         [None, 1-3.2]       =  1.38
 [Container] memoryRequest                      [None, 270M-1024M]  =  957M
