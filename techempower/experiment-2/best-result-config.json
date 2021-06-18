@@ -4,7 +4,7 @@ trials:
   - app-version: v1
     info:
       trial_id: ''
-      trial_num: 34
+      trial_num: 55
     settings:
       trail_settings:
         trial_run: 18mins
@@ -47,11 +47,11 @@ trials:
                     container:
                       resources:
                         requests:
-                          cpu: 1.01
-                          memory: 556Mi
+                          cpu: 1.09
+                          memory: 774.0Mi
                         limits:
-                          cpu: 1.01
-                          memory: 556Mi
+                          cpu: 1.09
+                          memory: 774.0Mi
             - name: update env
               spec:
                 template:
@@ -59,8 +59,8 @@ trials:
                     container:
                       env:
                         JAVA_OPTIONS: >-
-                          -server -XX:MaxInlineLevel=11
-                          -Dquarkus.thread-pool.core-threads=7
-                          -Dquarkus.thread-pool.queue-size=450
-                          -Dquarkus.datasource.jdbc.min-size=6
-                          -Dquarkus.datasource.jdbc.max-size=31
+                          -server -XX:MaxInlineLevel=9
+                          -Dquarkus.thread-pool.core-threads=10
+                          -Dquarkus.thread-pool.queue-size=867
+                          -Dquarkus.datasource.jdbc.min-size=9
+                          -Dquarkus.datasource.jdbc.max-size=36
