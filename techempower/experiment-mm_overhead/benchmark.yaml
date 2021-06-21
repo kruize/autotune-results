@@ -1,0 +1,32 @@
+application_name: techempower-quarkus-resteasy-hibernate
+objective_function: transaction_response_time
+function_variables:
+  - value_type: double
+    name: transaction_response_time
+    query_url: ''
+layers:
+sla_class: response_time
+direction: minimize
+git_url: 'https://github.com/kruize/benchmarks.git'
+benchmark: techempower
+baseline_image: 'kusumach/tfb-qrh:1.13.2.F'
+test_image: 'kusumach/tfb-qrh:1.13.2.F_mm.v1'
+iterations: 5
+warmupIterations: 20
+warmupTime: 60 s
+measurementIterations: 3
+measurementTime: 60 s
+throughput_rate: 200
+connections: 200
+threads: 3
+instances: 1
+server_config:
+  - name: perfexperiment.pnq
+  - master_nodes: 3
+  - worker_nodes: 3
+  - cpu_per_node: 4
+  - mem_per_node: 8192M
+client_config:
+  - name: node-0.perfcheck.pnq
+  - cpu: 4
+  - mem: 7810M
