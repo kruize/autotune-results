@@ -14,12 +14,8 @@
 [Container] cpuRequest                         [None, 1-3.2]       =  1.38
 [Container] memoryRequest                      [None, 270M-1024M]  =  957M
 ```
-Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 
-Below graph is the comparison of response_time metric with best configuration from the experiment and the baseline.
 ![Responsetime](responsetime.png)
-
-Below graphs represents different metrics data for each trial during the experiment. Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
 
 ![Responsetime Vs Trials](responsetimeVStrials.png)
 
