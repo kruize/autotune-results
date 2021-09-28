@@ -47,11 +47,11 @@ trials:
                     container:
                       resources:
                         requests:
-                          cpu: 29.3
-                          memory: 7775Mi
+                          cpu: 27.14
+                          memory: 7654Mi
                         limits:
-                          cpu: 29.3
-                          memory: 7775Mi
+                          cpu: 27.14
+                          memory: 7654Mi
             - name: update env
               spec:
                 template:
@@ -59,8 +59,13 @@ trials:
                     container:
                       env:
                         JAVA_OPTIONS: >-
-                          -server -XX:MaxInlineLevel=16
-                          -Dquarkus.thread-pool.core-threads=15
-                          -Dquarkus.thread-pool.queue-size=748
-                          -Dquarkus.datasource.jdbc.min-size=2
-                          -Dquarkus.datasource.jdbc.max-size=44
+                          -server -XX:+UseG1GC -XX:MaxRAMPercentage=70
+                          -Dquarkus.thread-pool.core-threads=158 -Dquarkus.thread-pool.queue-size=5572 
+                          -Dquarkus.datasource.jdbc.min-size=23 -Dquarkus.datasource.jdbc.initial-size=23 
+                          -Dquarkus.datasource.jdbc.max-size=87 -XX:FreqInlineSize=404 -XX:MaxInlineLevel=26 
+                          -XX:MinInliningThreshold=82 -XX:CompileThreshold=8942 -XX:CompileThresholdScaling=8.81
+                          -XX:ConcGCThreads=27 -XX:ParallelGCThreads=27 -XX:InlineSmallCode=4095 -XX:LoopUnrollLimit=237
+                          -XX:LoopUnrollMin=3 -XX:MinSurvivorRatio=22 -XX:NewRatio=1 -XX:TieredStopAtLevel=4 -XX:+TieredCompilation 
+                          -XX:-AllowParallelDefineClass -XX:-AllowVectorizeOnDemand -XX:-AlwaysCompileLoopMethods -XX:-AlwaysPreTouch
+                          -XX:-AlwaysTenure -XX:+BackgroundCompilation -XX:-DoEscapeAnalysis -XX:-UseInlineCaches -XX:-UseLoopPredicate
+                          -XX:-UseStringDeduplication -XX:-UseSuperWord -XX:+UseTypeSpeculation
