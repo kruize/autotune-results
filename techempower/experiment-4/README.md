@@ -49,6 +49,11 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 	- CPU usage increased by ~89%
 	- Memory usage increased by ~45%
 
+![Throughput](https://user-images.githubusercontent.com/17760990/135136932-4fd12d4e-1660-4bf2-a7fb-ccf1210af1bb.png)
+![Response_time](https://user-images.githubusercontent.com/17760990/135136951-d8b1ee87-999f-447b-babf-d0c0ff747695.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/135136959-d5d2db56-8943-40f5-9a2c-187505212109.png)
+![cpu_usage](https://user-images.githubusercontent.com/17760990/135136975-525ea091-bf0a-4aa8-95f1-ca3d56dd5d0d.png)
+![memory_usage](https://user-images.githubusercontent.com/17760990/135136986-67981ac5-4ea9-49d9-a3dd-746dd0e08488.png)
 
 Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
