@@ -41,18 +41,20 @@ Along with the above tunables, other JVM options hardcoded are "-server -XX:MAXR
 Quarkus tunable quarkus.datasource.jdbc.initial-size is set same as quarkus.datasource.jdbc.min-size to avoid min-size being picked with default when min-size is set higher than initial-size.
 Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit when ParallelGCThreads are less than ConcGCThreads.
 
-- Fourth best configuration is considered as that configuration generated best response time along with lesser memory usage.
-- Comparing the best configuration with the baseline (where no configuration is set), 
-	- Throughput improved by ~6.66% 
-	- Response time reduced by ~132.9%
-	- Max response time increased by ~38.4%
-	- Memory usage increased by ~32%
+Baseline / Default configuration used is cpu request and limits set to 2 ; memory requests and limits set to 4096M ; JAVA_OPTIONS= "-server -XX:+UseG1GC"
 
-![Throughput](https://user-images.githubusercontent.com/17760990/135136932-4fd12d4e-1660-4bf2-a7fb-ccf1210af1bb.png)
-![Response_time](https://user-images.githubusercontent.com/17760990/135136951-d8b1ee87-999f-447b-babf-d0c0ff747695.png)
-![Max_response_time](https://user-images.githubusercontent.com/17760990/135136959-d5d2db56-8943-40f5-9a2c-187505212109.png)
-![cpu_usage](https://user-images.githubusercontent.com/17760990/135136975-525ea091-bf0a-4aa8-95f1-ca3d56dd5d0d.png)
-![memory_usage](https://user-images.githubusercontent.com/17760990/135136986-67981ac5-4ea9-49d9-a3dd-746dd0e08488.png)
+- Fourth best configuration is considered as that configuration generated best response time along with lesser memory usage.
+- Comparing the best configuration from autotune with the baseline, 
+	- Throughput improved by ~9.19% 
+	- Response time reduced by ~56.37%
+	- Max response time increased by ~19.15%
+	- Memory usage increased by ~58.33%
+
+![Throughput](https://user-images.githubusercontent.com/17760990/136068973-02a00b0a-2f77-4852-8db7-36233ad0b048.png)
+![Response_time](https://user-images.githubusercontent.com/17760990/136068987-45242d37-28c3-414b-9687-95a8dcbe8284.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/136068993-3d4ae8b3-1e93-4ad1-8291-c56aca8c652c.png)
+![Cpu_usage](https://user-images.githubusercontent.com/17760990/136069011-182dc00e-3ed9-49ce-994f-d49650dd25c9.png)
+![Memory_usage](https://user-images.githubusercontent.com/17760990/136069022-aca0da8a-ff7d-4660-92ff-e1cad22ddd0f.png)
 
 Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
