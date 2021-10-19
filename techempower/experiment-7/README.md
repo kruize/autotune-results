@@ -1,4 +1,4 @@
-## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the best configurations were run to reproduce the data and were be updated at [manuals](/manuals) dir
+## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the best configurations are run to reproduce the data and will be updated at [manuals](/manuals) dir
 
 # Summary of data
 - Min response time is observed with following configuration
@@ -50,11 +50,11 @@ Baseline / Default configuration used is cpu request and limits set to 4 ; memor
 	- Max response time increased by ~57.67%
 	- Memory usage increased by ~164.9%
 
-![Throughput](https://user-images.githubusercontent.com/17760990/137093662-bdc4658b-5990-4c43-aa56-73f71b64c98f.png)
-![Response_time](https://user-images.githubusercontent.com/17760990/137093677-08e8d604-06c3-4cad-9f8b-2903f6a6814d.png)
-![Max_response_time](https://user-images.githubusercontent.com/17760990/137093683-6c2124e7-0c27-40a8-9621-6b31fdcac6b5.png)
-![Cpu_usage](https://user-images.githubusercontent.com/17760990/137093692-4a95c061-773a-4d80-898b-01e59627ad41.png)
-![Memory_usage](https://user-images.githubusercontent.com/17760990/137093699-d32d6253-442e-46bb-aeda-03613386071a.png)
+![Throughput](https://user-images.githubusercontent.com/17760990/137851168-a6ad67a9-addd-46d6-9eac-428c1347ee1e.png)
+![Response_time](https://user-images.githubusercontent.com/17760990/137851181-c21263b7-edb4-443d-a81b-db29f520b271.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/137851192-00352d5b-2a4c-4fbe-815a-3fd66138cbb2.png)
+![Cpu_usage](https://user-images.githubusercontent.com/17760990/137851222-f367d291-3331-4419-ad1a-0d773d8b1028.png)
+![Memory_usage](https://user-images.githubusercontent.com/17760990/137851236-4bba5a08-b87e-4de6-a4ad-3d19f4a8797b.png)
 
 Note: Best configuration from multiple trials is picked based on having least response time with good throughput, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
