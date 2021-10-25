@@ -43,7 +43,7 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 
 Baseline / Default configuration used is cpu request and limits set to 4 ; memory requests and limits set to 4096M ; JAVA_OPTIONS= "-server -XX:+UseG1GC"
 
-- 
+- Trial 38 is considered as the best configuration in the experiment.
 - Comparing the best configuration from autotune with the baseline, 
 	- Throughput improved by ~6.85% 
 	- Response time reduced by ~61.97%
