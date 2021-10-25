@@ -42,6 +42,7 @@ Quarkus tunable quarkus.datasource.jdbc.initial-size is set same as quarkus.data
 Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit when ParallelGCThreads are less than ConcGCThreads.
 
 - Fourth best configuration is considered as that configuration generated best response time along with lesser memory usage.
+- Trial 59 is considered as the best configuration from the experiment.
 - Comparing the best configuration with the baseline (where no configuration is set), 
 	- Throughput improved by ~18.96% 
 	- Response time reduced by ~60%
@@ -54,6 +55,9 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 ![Max_response_time](https://user-images.githubusercontent.com/17760990/135136959-d5d2db56-8943-40f5-9a2c-187505212109.png)
 ![cpu_usage](https://user-images.githubusercontent.com/17760990/135136975-525ea091-bf0a-4aa8-95f1-ca3d56dd5d0d.png)
 ![memory_usage](https://user-images.githubusercontent.com/17760990/135136986-67981ac5-4ea9-49d9-a3dd-746dd0e08488.png)
+
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664155-0bf8e762-e24f-49b1-a17c-336cc78b321d.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664201-efd3c2f8-f40b-4a61-ab81-3a33df1bfae4.png)
 
 Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
