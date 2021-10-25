@@ -43,7 +43,7 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 
 Baseline / Default configuration used is cpu request and limits set to 2 ; memory requests and limits set to 4096M ; JAVA_OPTIONS= "-server -XX:+UseG1GC"
 
-- Fourth best configuration is considered as that configuration generated best response time along with lesser memory usage.
+- Trial 99 is considered as the best configuration from the experiment.
 - Comparing the best configuration from autotune with the baseline, 
 	- Throughput improved by ~9.19% 
 	- Response time reduced by ~56.37%
@@ -55,6 +55,9 @@ Baseline / Default configuration used is cpu request and limits set to 2 ; memor
 ![Max_response_time](https://user-images.githubusercontent.com/17760990/136068993-3d4ae8b3-1e93-4ad1-8291-c56aca8c652c.png)
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/136069011-182dc00e-3ed9-49ce-994f-d49650dd25c9.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/136069022-aca0da8a-ff7d-4660-92ff-e1cad22ddd0f.png)
+
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664694-3a4f4650-cd20-4757-8d3a-1c29c6068c95.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664709-3f17b4a1-5ba6-40c8-bee7-770892dc4e05.png)
 
 Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
