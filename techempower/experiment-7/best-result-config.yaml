@@ -4,7 +4,7 @@ trials:
   - app-version: v1
     info:
       trial_id: ''
-      trial_num: 62
+      trial_num: 38
     settings:
       trail_settings:
         trial_run: 6mins
