@@ -56,8 +56,28 @@ Baseline / Default configuration used is cpu request and limits set to 2 ; memor
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/136069011-182dc00e-3ed9-49ce-994f-d49650dd25c9.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/136069022-aca0da8a-ff7d-4660-92ff-e1cad22ddd0f.png)
 
-![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664694-3a4f4650-cd20-4757-8d3a-1c29c6068c95.png)
-![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664709-3f17b4a1-5ba6-40c8-bee7-770892dc4e05.png)
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139203111-86b3ef92-b63f-44aa-93d4-51272315c5d6.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139203143-ecc942ac-d723-4ea1-8678-100403e182ac.png)
+In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
+
+### Configuration Details:
+- Machine: 
+```
+  - Server:  openshift cluster v4.7.19
+    Master nodes	3
+    Worker nodes	6
+    CPU per node	32
+    Memory per node	64G
+
+  - Client: RHEL 8.3
+    CPU  		64
+    Memory 		64G  
+```
+- Load: 
+```
+ 	Users :		512
+	Threads :	56
+```
 
 Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv

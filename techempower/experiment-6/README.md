@@ -6,7 +6,7 @@
    [Layer]            [Tunable]              [Default, Range]      Best Config
 [Container] cpuRequest				[None, 1-4]		=      4
 [Container] memoryRequest			[None, 270M-4096M]	=  3962M
-[Quarkus]   quarkus.thread-pool.core-threads	[1, 0-16]		=      6
+[Quarkus]   quarkus.thread-pool.core-threads	[1, 0-32]		=      6
 [Quarkus]   quarkus.thread-pool.queue-size	[unbounded, 0-10000]	=   6790
 [Quarkus]   quarkus.datasource.jdbc.min-size	[0, 1-12]		=      5
 [Quarkus]   quarkus.datasource.jdbc.max-size	[12, 12-90]		=     81
@@ -56,9 +56,28 @@ Baseline / Default configuration used is cpu request and limits set to 4 ; memor
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/137093692-4a95c061-773a-4d80-898b-01e59627ad41.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/137093699-d32d6253-442e-46bb-aeda-03613386071a.png)
 
-![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138665086-4ee83b66-51d2-4f16-87ad-9de2c2ffc5bf.png)
-![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138665112-c056caf6-43d7-4e9a-adfc-eedb49336940.png)
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139203412-d7d1469b-1421-4308-85b6-6c4339fede66.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139203447-a752fafa-0960-496d-ba2d-072ec008d059.png)
+In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
 
+### Configuration Details:
+- Machine: 
+```
+  - Server:  openshift cluster v4.8.13
+    Master nodes	3
+    Worker nodes	6
+    CPU per node	32
+    Memory per node	64G
+
+  - Client: RHEL 8.3
+    CPU  		64
+    Memory 		64G  
+```
+- Load: 
+```
+ 	Users :		512
+	Threads :	56
+```
 
 Note: Best configuration from multiple trials is picked based on having least response time with good throughput, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv

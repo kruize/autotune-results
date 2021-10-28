@@ -6,7 +6,7 @@
    [Layer]            [Tunable]              [Default, Range]      Best Config
 [Container] cpuRequest				[None, 1-4]		=      4
 [Container] memoryRequest			[None, 270M-4096M]	=  3319M
-[Quarkus]   quarkus.thread-pool.core-threads	[1, 0-16]		=     19
+[Quarkus]   quarkus.thread-pool.core-threads	[1, 0-32]		=     19
 [Quarkus]   quarkus.thread-pool.queue-size	[unbounded, 0-10000]	=   3700
 [Quarkus]   quarkus.datasource.jdbc.min-size	[0, 1-12]		=     10
 [Quarkus]   quarkus.datasource.jdbc.max-size	[12, 12-90]		=     86
@@ -56,8 +56,28 @@ Baseline / Default configuration used is cpu request and limits set to 4 ; memor
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/137851222-f367d291-3331-4419-ad1a-0d773d8b1028.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/137851236-4bba5a08-b87e-4de6-a4ad-3d19f4a8797b.png)
 
-![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138665621-50a8bc76-3680-45fb-b547-3f4d9f2f775d.png)
-![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138665649-560f4bbe-dd85-49a0-b329-5ff745f4a010.png)
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139204216-1d799875-dfcd-44a3-b5c6-0cf35b206da7.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139204283-f9428803-8c3d-4dfe-acd1-9f6ae9edbbde.png)
+In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
+
+### Configuration Details:
+- Machine: 
+```
+  - Server:  openshift cluster v4.8.13
+    Master nodes	3
+    Worker nodes	6
+    CPU per node	32
+    Memory per node	64G
+
+  - Client: RHEL 8.3
+    CPU  		64
+    Memory 		64G  
+```
+- Load: 
+```
+ 	Users :		512
+	Threads :	56
+```
 
 
 Note: Best configuration from multiple trials is picked based on having least response time with good throughput, no errors while running the load and ensuring the data has met the convergence criteria.

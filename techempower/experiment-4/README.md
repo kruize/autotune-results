@@ -56,8 +56,29 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 ![cpu_usage](https://user-images.githubusercontent.com/17760990/135136975-525ea091-bf0a-4aa8-95f1-ca3d56dd5d0d.png)
 ![memory_usage](https://user-images.githubusercontent.com/17760990/135136986-67981ac5-4ea9-49d9-a3dd-746dd0e08488.png)
 
-![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664155-0bf8e762-e24f-49b1-a17c-336cc78b321d.png)
-![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/138664201-efd3c2f8-f40b-4a61-ab81-3a33df1bfae4.png)
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139199809-55079879-d371-4d6e-968d-b57fa3ab2e46.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139200287-6ba90a8f-9400-4ff5-9396-5912998778e1.png)
+
+In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
+
+### Configuration Details:
+- Machine: 
+```
+  - Server:  openshift cluster v4.7.19
+    Master nodes	3
+    Worker nodes	6
+    CPU per node	32
+    Memory per node	64G
+
+  - Client: RHEL 8.3
+    CPU  		64
+    Memory 		64G  
+```
+- Load: 
+```
+ 	Users :		512
+	Threads :	56
+```
 
 Note: Best configuration from multiple trials is picked based on having least response time, no errors while running the load and ensuring the data has met the convergence criteria.
 Each trial would have an individual configuartion based on the tunables.For information on the configuration of a particular trial, look into experiment-data.csv
