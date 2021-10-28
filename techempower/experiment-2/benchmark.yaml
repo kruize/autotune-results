@@ -1,9 +1,11 @@
 application_name: techempower-quarkus-resteasy-hibernate
-slo: transaction_response_time
-function_variables:
-  - value_type: double
-    name: transaction_response_time
-    query_url: ''
+slo:
+  - slo_class: response_time
+    objective_function: transaction_response_time
+    direction: minimize
+    function_variables:
+      - name: transaction_response_time
+        value_type: double
 layers:
   - layer_level: 0
     tunables:
@@ -53,8 +55,6 @@ layers:
     layer_name: quarkus
     layer_details: quarkus tunables
 
-objective_function: response_time
-direction: minimize
 git_url: 'https://github.com/kruize/benchmarks.git'
 benchmark: techempower
 image: 'kusumach/tfb-qrh-mm:1.13.2.F'
