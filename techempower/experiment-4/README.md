@@ -1,6 +1,10 @@
-## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the top 5 best configuration were run to reproduce the data and were be updated at [manuals](/manuals) dir
+## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the top 5 best configuration were run to reproduce the data and were be updated at [manuals](manuals) dir
 
-# Summary of data
+# Goal of the experiment:
+- Minimize transaction response time.
+- For details on slo and benchmark, look into [benchmark.yaml](benchmark.yaml)
+
+# Summary of data:
 - Min response time is observed with following configuration
 ```
    [Layer]            [Tunable]              [Default, Range]      Best Config
@@ -41,7 +45,6 @@ Along with the above tunables, other JVM options hardcoded are "-server -XX:MAXR
 Quarkus tunable quarkus.datasource.jdbc.initial-size is set same as quarkus.datasource.jdbc.min-size to avoid min-size being picked with default when min-size is set higher than initial-size.
 Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit when ParallelGCThreads are less than ConcGCThreads.
 
-- Fourth best configuration is considered as that configuration generated best response time along with lesser memory usage.
 - Trial 59 is considered as the best configuration from the experiment.
 - Comparing the best configuration with the baseline (where no configuration is set), 
 	- Throughput improved by ~18.96% 
@@ -62,6 +65,8 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
 
 ### Configuration Details:
+- JVM			openjdk:11.0.6
+- Quarkus		1.13.2.F
 - Machine: 
 ```
   - Server:  openshift cluster v4.7.19
