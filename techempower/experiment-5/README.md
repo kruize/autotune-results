@@ -52,7 +52,7 @@ Baseline / Default configuration used is cpu request and limits set to 2 ; memor
 
 ![Throughput](https://user-images.githubusercontent.com/17760990/136068973-02a00b0a-2f77-4852-8db7-36233ad0b048.png)
 ![Response_time](https://user-images.githubusercontent.com/17760990/136068987-45242d37-28c3-414b-9687-95a8dcbe8284.png)
-![Max_response_time](https://user-images.githubusercontent.com/17760990/136068993-3d4ae8b3-1e93-4ad1-8291-c56aca8c652c.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/139278129-b1ca4be8-9dd9-4c19-bd38-f82158fa325d.png)
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/136069011-182dc00e-3ed9-49ce-994f-d49650dd25c9.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/136069022-aca0da8a-ff7d-4660-92ff-e1cad22ddd0f.png)
 
