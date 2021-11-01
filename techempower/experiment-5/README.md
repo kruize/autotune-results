@@ -1,4 +1,9 @@
-## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the top 5 best configuration were run to reproduce the data and were be updated at [manuals](/manuals) dir
+## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the top 5 best configuration were run to reproduce the data and were be updated at [manuals](manuals) dir
+
+# Goal of the experiment:
+- Minimize transaction response time.
+
+- For details on slo and benchmark, look into [benchmark.yaml](benchmark.yaml)
 
 # Summary of data
 - Min response time is observed with following configuration
@@ -61,6 +66,10 @@ Baseline / Default configuration used is cpu request and limits set to 2 ; memor
 In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
 
 ### Configuration Details:
+```
+- JVM                   openjdk:11.0.6
+- Quarkus               1.13.2.F
+```
 - Machine: 
 ```
   - Server:  openshift cluster v4.7.19

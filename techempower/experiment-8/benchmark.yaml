@@ -158,6 +158,8 @@ git_url: 'https://github.com/kusumachalasani/autotune-1.git'
 git_branch: 'hpo-tfb-db'
 benchmark: techempower
 image: 'kusumach/tfb-qrh:1.13.2.F_mm.v1'
+jdk: openjdk:11.0.6-jdk-slim
+quarkus: 1.13.2.F
 iterations: 3
 warmupIterations: 3
 warmupTime: 60 s
