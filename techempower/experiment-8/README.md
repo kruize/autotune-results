@@ -48,14 +48,15 @@ Baseline / Default configuration used is cpu request and limits set to 4 ; memor
 	- Response time reduced by ~73.98%
 	- Max response time reduced by ~10.25%
 
-![Throughput](https://user-images.githubusercontent.com/17760990/137851168-a6ad67a9-addd-46d6-9eac-428c1347ee1e.png)
-![Response_time](https://user-images.githubusercontent.com/17760990/137851181-c21263b7-edb4-443d-a81b-db29f520b271.png)
-![Max_response_time](https://user-images.githubusercontent.com/17760990/137851192-00352d5b-2a4c-4fbe-815a-3fd66138cbb2.png)
-![Cpu_usage](https://user-images.githubusercontent.com/17760990/137851222-f367d291-3331-4419-ad1a-0d773d8b1028.png)
-![Memory_usage](https://user-images.githubusercontent.com/17760990/137851236-4bba5a08-b87e-4de6-a4ad-3d19f4a8797b.png)
+![Throughput](https://user-images.githubusercontent.com/17760990/139646364-355b352d-24ab-44d6-92a6-b4a8d349817d.png)
+![Response_time](https://user-images.githubusercontent.com/17760990/139646372-2cffc205-d0b4-4947-8f03-f3cdfb35d126.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/139646381-85c6e4ed-e0c7-4319-9f60-51e8b18f0008.png)
+![Cpu_usage](https://user-images.githubusercontent.com/17760990/139646400-b742f9a0-a11f-4916-b5ae-afb6184272fb.png)
+![Memory_usage](https://user-images.githubusercontent.com/17760990/139646413-5bc8b68a-e5b4-4b42-a415-f7846dfca3ef.png)
 
-![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139204216-1d799875-dfcd-44a3-b5c6-0cf35b206da7.png)
-![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139204283-f9428803-8c3d-4dfe-acd1-9f6ae9edbbde.png)
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139646277-ffaa05a5-3f69-42a0-aa7c-2f558b539a7d.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139646283-9d561fe4-3833-450e-8dea-c0908db47c76.png)
+
 In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
 
 ### Configuration Details:
