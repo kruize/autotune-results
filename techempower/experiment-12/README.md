@@ -51,14 +51,16 @@ Baseline / Default configuration used is cpu request and limit set to 4 ; memory
 - Comparing the best configuration from autotune with the baseline, 
 	- Response time reduced by ~81.9%
 
-![Throughput](https://user-images.githubusercontent.com/17760990/139646364-355b352d-24ab-44d6-92a6-b4a8d349817d.png)
-![Response_time](https://user-images.githubusercontent.com/17760990/139646372-2cffc205-d0b4-4947-8f03-f3cdfb35d126.png)
-![Max_response_time](https://user-images.githubusercontent.com/17760990/139646381-85c6e4ed-e0c7-4319-9f60-51e8b18f0008.png)
-![Cpu_usage](https://user-images.githubusercontent.com/17760990/139646400-b742f9a0-a11f-4916-b5ae-afb6184272fb.png)
-![Memory_usage](https://user-images.githubusercontent.com/17760990/139646413-5bc8b68a-e5b4-4b42-a415-f7846dfca3ef.png)
+![Throughput](https://user-images.githubusercontent.com/17760990/151574878-4857838d-66ce-464c-94c4-3bffe6ee0cb4.png)
+![Response_time](https://user-images.githubusercontent.com/17760990/151574891-76e04cf0-5eeb-44a9-9723-b1abb819d5ec.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/151574896-09e85502-ac1d-4ca7-ab03-66d92d7ac325.png)
+![Cpu_usage](https://user-images.githubusercontent.com/17760990/151574699-f9c8c74e-72ab-4b9e-8af2-854b196208f7.png)
+![Memory_usage](https://user-images.githubusercontent.com/17760990/151574715-ac997e4e-882b-4554-bf98-c87aa803e1e4.png)
+![Percentile_Response_time](https://user-images.githubusercontent.com/17760990/151575761-975d3289-b0be-40f2-bc91-8e7f3bfdbf74.png)
 
-![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139646277-ffaa05a5-3f69-42a0-aa7c-2f558b539a7d.png)
-![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/139646283-9d561fe4-3833-450e-8dea-c0908db47c76.png)
+
+![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/151575084-ef6e2d39-a6a1-4d9b-a0f3-8d003eaf5160.png)
+![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/151575096-4836455a-2bd4-4c4b-a753-365310558bc8.png)
 
 In the above graphs, trial 0 is the data of default configuration which is considered as baseline.
 
