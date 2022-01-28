@@ -1,0 +1,180 @@
+application_name: techempower-quarkus-resteasy-hibernate
+slo:
+  - slo_class: response_time
+    objective_function: ( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 ) / ( 1 + ( thrpt_ci * rsp_ci ))
+    direction: maximize
+    function_variables:
+      - name: transaction_response_time
+        value_type: double
+      - name: throughput
+        value_type: double
+      - name: max_response_time
+        value_type: double
+layers:
+  - layer_level: 0
+    tunables:
+      - name: cpuRequest
+        value_type: double
+        lower_bound: '1'
+        upper_bound: '4'
+        step: 0.01
+      - name: memoryRequest
+        value_type: double
+        lower_bound: 270M
+        upper_bound: 4096M
+        step: 1
+    layer_name: container
+    layer_details: generic container tunables
+  - layer_level: 1
+    tunables:
+      - name: FreqInlineSize
+        value_type: integer
+        lower_bound: '325'
+        upper_bound: '500'
+        step: 1
+      - name: MaxInlineLevel
+        value_type: integer
+        lower_bound: '9'
+        upper_bound: '50'
+        step: 1
+      - name: MinInliningThreshold
+        value_type: integer
+        lower_bound: '0'
+        upper_bound: '200'
+        step: 1
+      - name: CompileThreshold
+        value_type: integer
+        lower_bound: '1000'
+        upper_bound: '10000'
+        step: 10
+      - name: CompileThresholdScaling
+        value_type: double
+        lower_bound: '1'
+        upper_bound: '15'
+        step: 0.1
+      - name: ConcGCThreads
+        value_type: integer
+        lower_bound: '1'
+        upper_bound: '8'
+        step: 1
+      - name: InlineSmallCode
+        value_type: integer
+        lower_bound: '500'
+        upper_bound: '5000'
+        step: 1
+      - name: LoopUnrollLimit
+        value_type: integer
+        lower_bound: '20'
+        upper_bound: '250'
+        step: 1
+      - name: LoopUnrollMin
+        value_type: integer
+        lower_bound: '0'
+        upper_bound: '20'
+        step: 1
+      - name: MinSurvivorRatio
+        value_type: integer
+        lower_bound: '3'
+        upper_bound: '48'
+        step: 1
+      - name: NewRatio
+        value_type: integer
+        lower_bound: '1'
+        upper_bound: '10'
+        step: 1
+      - name: TieredStopAtLevel
+        value_type: integer
+        lower_bound: '0'
+        upper_bound: '4'
+        step: 1
+      - name: TieredCompilation
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: AllowParallelDefineClass
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: AllowVectorizeOnDemand
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: AlwaysCompileLoopMethods
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: AlwaysPreTouch
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: AlwaysTenure
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: BackgroundCompilation
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: DoEscapeAnalysis
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: UseInlineCaches
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: UseLoopPredicate
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: UseStringDeduplication
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: UseSuperWord
+        value_type: categorical
+        choices: ["true", "false"] 
+      - name: UseTypeSpeculation
+        value_type: categorical
+        choices: ["true", "false"]
+    layer_name: hotspot
+    layer_details: hotspot tunables
+
+  - layer_level: 2
+    tunables:
+      - name: quarkusthreadpoolcorethreads
+        value_type: integer
+        upper_bound: 32
+        lower_bound: 1
+        step: 1
+      - name: quarkusthreadpoolqueuesize
+        value_type: integer
+        upper_bound: 10000
+        lower_bound: 0
+        step: 10
+      - name: quarkusdatasourcejdbcminsize
+        value_type: integer
+        upper_bound: 12
+        lower_bound: 1
+        step: 1
+      - name: quarkusdatasourcejdbcmaxsize
+        value_type: integer
+        upper_bound: 90
+        lower_bound: 12
+        step: 1
+    layer_name: quarkus
+    layer_details: quarkus tunables
+
+git_url: 'https://github.com/kusumachalasani/autotune-1.git'
+git_branch: 'hpo-tfb-sldb'
+benchmark: techempower
+image: 'kusumach/tfb-qrh:1.13.2.F_mm.v1'
+jdk: openjdk:11.0.6-jdk-slim
+quarkus: 1.13.2.F
+iterations: 3
+warmupIterations: 3
+warmupTime: 60 s
+measurementIterations: 3
+measurementTime: 60 s
+connections: 512
+threads: 56
+instances: 1
+server_config:
+  - name: scalelabperf
+  - master_nodes: 3
+  - worker_nodes: 3
+  - cpu_per_node: 32
+  - mem_per_node: 64G
+client_config:
+  - name: scalelabperf-client
+  - cpu: 64
+  - mem: 64G
