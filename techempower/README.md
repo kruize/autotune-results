@@ -40,16 +40,19 @@
 ## List of Experiments:
 
 ```
-experiment-1	Minimize `transaction_response_time` on shared hardware with 7 tunables.
-experiment-2	Minimize `transaction_response_time` on shared hardware with 7 tunables.
-experiment-3	Minimize `transaction_response_time` on shared hardware with 7 tunables.
-experiment-4	Minimize `transaction_response_time` on dedicated hardware and 32c-8GB MW cluster with 31 tunables.
-experiment-5	Minimize `transaction_response_time` on dedicated hardware and 2c-4GB MW cluster with 31 tunables.
-experiment-6	Minimize `transaction_response_time` on dedicated hardware and 4c-4GB MW cluster with 31 tunables.
-experiment-7	Maximize `(1.25 * throughput) - (1.5 * transaction_response_time) - (0.25 * max_response_time)` on dedicated hardware and 4c-4GB MW cluster with 31 tunables.
-experiment-8	Maximize `(( throughput / transaction_response_time) /  max_response_time) * 100` on dedicated hardware and 4c-4GB MW cluster with 31 tunables.
-experiment-9	Minimize `transaction_response_time` on dedicated hardware and 2c-4GB SLP cluster with 31 tunables.
-experiment-10   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` on dedicated hardware and 4c-4GB SLP cluster with 31 tunables.
-experiment-11	Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 ) / ( 1 + ( thrpt_ci * rsp_ci ))` on dedicated 4c-4GB SLP cluster with 31 tunables.
-experiment-12	Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with constant container tunables on dedicated 4c-4GB SLP cluster with 29 tunables.
+experiment-1                                    Minimize `transaction_response_time` on shared hardware with 7 tunables.
+experiment-2                                    Minimize `transaction_response_time` on shared hardware with 7 tunables.
+experiment-3                                    Minimize `transaction_response_time` on shared hardware with 7 tunables.
+experiment-4                                    Minimize `transaction_response_time` on dedicated hardware and 32c-8GB MW cluster with 31 tunables.
+experiment-5                                    Minimize `transaction_response_time` on dedicated hardware and 2c-4GB MW cluster with 31 tunables.
+experiment-6                                    Minimize `transaction_response_time` on dedicated hardware and 4c-4GB MW cluster with 31 tunables.
+experiment-7                                    Maximize `(1.25 * throughput) - (1.5 * transaction_response_time) - (0.25 * max_response_time)` on dedicated hardware and 4c-4GB MW cluster with 31 tunables.
+experiment-8                                    Maximize `(( throughput / transaction_response_time) /  max_response_time) * 100` on dedicated hardware and 4c-4GB MW cluster with 31 tunables.
+experiment-9                                    Minimize `transaction_response_time` on dedicated hardware and 2c-4GB SLP cluster with 31 tunables.
+experiment-10                                   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` on dedicated hardware and 4c-4GB SLP cluster with 31 tunables.
+experiment-11                                   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 ) / ( 1 + ( thrpt_ci * rsp_ci ))` on dedicated 4c-4GB SLP cluster with 31 tunables.
+experiment-12                                   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with constant container tunables on dedicated 4c-4GB SLP cluster with 29 tunables.
+experiment-HT                                   Experiment to compare performance with and without hyperthreading.
+experiment-mm_overhead                          Experiment to measure overhead of micrometer(MM) on shared hardware
+experiment-mm_overhead_dedicatedhardware        Experiment to measure overhead of micrometer(MM) on dedicated hardware.
 ```
