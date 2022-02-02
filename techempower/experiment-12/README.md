@@ -56,7 +56,11 @@ Baseline / Default configuration used is cpu request and limit set to 4 ; memory
 ![Max_response_time](https://user-images.githubusercontent.com/17760990/151574896-09e85502-ac1d-4ca7-ab03-66d92d7ac325.png)
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/151574699-f9c8c74e-72ab-4b9e-8af2-854b196208f7.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/151574715-ac997e4e-882b-4554-bf98-c87aa803e1e4.png)
-![Percentile_Response_time](https://user-images.githubusercontent.com/17760990/151575761-975d3289-b0be-40f2-bc91-8e7f3bfdbf74.png)
+
+![Percentile_Response_time](https://user-images.githubusercontent.com/17760990/152111671-6c4d5feb-960c-4119-abb9-8c2a2a58da6f.png)
+![Requests Served (with in responsetime bucket)](https://user-images.githubusercontent.com/17760990/152112084-621a3ea4-f7c3-4417-9ed5-6b312360cbed.png)
+![Percentage Requests Served(within responsetime bucket)](https://user-images.githubusercontent.com/17760990/152111953-485fdc7b-7ca1-4cc7-a48f-57d0b60a2dd8.png)
+The above percentile data and Requests Served graphs are based on [manuals](manuals)/set-2 experiments.
 
 
 ![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/151575084-ef6e2d39-a6a1-4d9b-a0f3-8d003eaf5160.png)
