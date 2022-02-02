@@ -47,7 +47,7 @@ trials:
                     container:
                       resources:
                         requests:
-                    i      cpu: 3.75
+                          cpu: 3.75
                           memory: 3474Mi
                         limits:
                           cpu: 3.75
@@ -58,7 +58,7 @@ trials:
                   spec:
                     container:
                       env:
-                        JAVA_OPTIONS: i>-
+                        JAVA_OPTIONS: >-
                           -server -XX:+UseG1GC -XX:MaxRAMPercentage=70
                           -Dquarkus.thread-pool.core-threads=12 -Dquarkus.thread-pool.queue-size=2140
                           -Dquarkus.datasource.jdbc.min-size=1 -Dquarkus.datasource.jdbc.initial-size=1 -Dquarkus.datasource.jdbc.max-size=45
