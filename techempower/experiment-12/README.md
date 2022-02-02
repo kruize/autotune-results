@@ -60,8 +60,9 @@ Baseline / Default configuration used is cpu request and limit set to 4 ; memory
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/151574715-ac997e4e-882b-4554-bf98-c87aa803e1e4.png)
 
 ![Percentile_Response_time](https://user-images.githubusercontent.com/17760990/152111671-6c4d5feb-960c-4119-abb9-8c2a2a58da6f.png)
-![Requests Served (with in responsetime bucket)](https://user-images.githubusercontent.com/17760990/152112084-621a3ea4-f7c3-4417-9ed5-6b312360cbed.png)
-![Percentage Requests Served(within responsetime bucket)](https://user-images.githubusercontent.com/17760990/152111953-485fdc7b-7ca1-4cc7-a48f-57d0b60a2dd8.png)
+![Requests Served (with in responsetime bucket)](https://user-images.githubusercontent.com/17760990/152115946-a1343662-c5cf-467a-a406-d10db240239e.png)
+![Percentage Requests Served(within responsetime bucket)](https://user-images.githubusercontent.com/17760990/152115954-e41d0f45-bee8-4959-b8d2-b0c0e944d0bf.png)
+
 The above percentile data and Requests Served graphs are based on [manuals](manuals)/set-2 experiments.
 
 
