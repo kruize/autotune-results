@@ -58,7 +58,7 @@ trials:
                   spec:
                     container:
                       env:
-                        JAVA_OPTIONS: i>-
+                        JAVA_OPTIONS: >-
                           -server -XX:+UseG1GC -XX:MaxRAMPercentage=70
                           -Dquarkus.thread-pool.core-threads=8 -Dquarkus.thread-pool.queue-size=780
                           -Dquarkus.datasource.jdbc.min-size=4 -Dquarkus.datasource.jdbc.initial-size=4 -Dquarkus.datasource.jdbc.max-size=68
