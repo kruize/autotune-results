@@ -1,0 +1,69 @@
+experiment_id: 2190310A384BC90EF
+application_name: tfb-qrh-sample
+trials:
+  - app-version: v1
+    info:
+      trial_id: ''
+      trial_num: 100
+    settings:
+      trail_settings:
+        trial_run: 6mins
+        trial_measurement_time: 3mins
+        trial_iterations: 3
+      deployment_settings:
+        deployment_policy:
+          type: newDeployment
+          target_env: qa
+          agent: CLI
+        deployment_tracking:
+          trackers:
+            - training
+            - production
+    deployments:
+      - training:
+          deployment_name: tfb-qrh-sample
+          state: ''
+          result: ''
+          result_info: ''
+          result_error: ''
+          metrics:
+            - name: request_sum
+              query: sum(rate(http_server_requests_seconds_sum{exception=none}[3m])) by (pod)
+              datasource: prometheus
+            - name: request_count
+              query: sum(rate(http_server_requests_seconds_count{exception=none}[3m])) by (pod)
+              datasource: prometheus
+            - name: cpu_usage
+              query: sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate) by (pod)
+              datasource: prometheus
+            - name: memory_usage
+              query: sum(container_memory_working_set_bytes) by (pod)
+              datasource: prometheus
+          config:
+            - name: update requests and limits
+              spec:
+                template:
+                  spec:
+                    container:
+                      resources:
+                        requests:
+                          cpu: 3.75
+                          memory: 3474Mi
+                        limits:
+                          cpu: 3.75
+                          memory: 3474Mi
+            - name: update env
+              spec:
+                template:
+                  spec:
+                    container:
+                      env:
+                        JAVA_OPTIONS: >-
+                          -server -XX:+UseG1GC -XX:MaxRAMPercentage=70
+                          -Dquarkus.thread-pool.core-threads=12 -Dquarkus.thread-pool.queue-size=2140
+                          -Dquarkus.datasource.jdbc.min-size=1 -Dquarkus.datasource.jdbc.initial-size=1 -Dquarkus.datasource.jdbc.max-size=45
+                          -XX:FreqInlineSize=416 -XX:MaxInlineLevel=42 -XX:MinInliningThreshold=6 -XX:CompileThreshold=7080 -XX:CompileThresholdScaling=3.6
+                          -XX:ConcGCThreads=6 -XX:ParallelGCThreads=6 -XX:InlineSmallCode=1891 -XX:LoopUnrollLimit=146 -XX:LoopUnrollMin=13 -XX:MinSurvivorRatio=7
+                          -XX:NewRatio=5 -XX:TieredStopAtLevel=3 -XX:-TieredCompilation -XX:+AllowParallelDefineClass -XX:-AllowVectorizeOnDemand
+                          -XX:-AlwaysCompileLoopMethods -XX:-AlwaysPreTouch -XX:+AlwaysTenure -XX:+BackgroundCompilation -XX:+DoEscapeAnalysis -XX:+UseInlineCaches
+                          -XX:+UseLoopPredicate -XX:+UseStringDeduplication -XX:-UseSuperWord -XX:+UseTypeSpeculation

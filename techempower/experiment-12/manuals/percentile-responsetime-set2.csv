@@ -1,0 +1,6 @@
+Response time(ms),50th percentile,,,95th percentile,,,97th percentile,,,99th percentile,,,99.9th percentile,,,99.99th percentile,,,99.999th percentile,,,100th percentile,
+Iterations,Baseline,Autotune Config,,Baseline,Autotune Config,,Baseline,Autotune Config,,Baseline,Autotune Config,,Baseline,Autotune Config,,Baseline,Autotune Config,,Baseline,Autotune Config,,Baseline,Autotune Config
+ITR-0,4.44,0.63,,84.35,8.94,,87.24,64.75,,96.87,82.59,,111.53,93.48,,187.83,111.50,,201.09,198.52,,30000.00,30000.00
+ITR-1,4.51,0.63,,84.37,9.21,,87.29,68.37,,97.45,83.38,,112.87,100.46,,191.31,111.84,,30000.00,190.31,,30000.00,223.70
+ITR-2,4.47,0.63,,84.80,10.60,,87.61,71.45,,98.92,84.62,,111.74,104.08,,190.07,131.73,,206.91,219.52,,30000.00,30000.00
+
