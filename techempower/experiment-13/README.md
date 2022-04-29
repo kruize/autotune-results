@@ -9,9 +9,9 @@
 - Min response time is observed with following configuration
 ```
    [Layer]            [Tunable]              [Default, Range]      Best Config
-[Container] cpuRequest                          [None, 1-8]             =    7.8
-[Container] memoryRequest                       [None, 270M-4096M]      =  2598M
-[Hotspot]   GCPolicy				[ , ]			=  ParallelGC
+[Container] 	      cpuRequest             [None, 1-8]             =    7.8
+[Container]           memoryRequest          [None, 270M-4096M]      =  2598M
+[Hotspot]             GCPolicy		     [ , ]		     =  ParallelGC
 
 ```
 The above experiment is to find which GCPolicy is suitable for the available cpu and memory. Tunables used for this experiment are cpu, memory and GCPolicy. Requests and limits of cpu and memory resources is set to same.
