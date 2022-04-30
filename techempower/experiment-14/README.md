@@ -21,6 +21,10 @@ Multiple small experiments with 10 trials were done as part of this experiment w
 - 4 cores - 8192 M. Data for this configuration is at [experiment-data-4c-8G.csv](experiment-data-4c-8G.csv)
 - 1 core  - 8192 M. Data for this configuration is at [experiment-data-1c-8G.csv](experiment-data-1c-8G.csv)
 
+Below are the charts of Throughput, Response_time Vs GCPolicy for different cpu-memory configurations.
+![Throughput Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166085514-3a27e5a0-175c-4e1c-80d3-bc0d9f2d70bc.png)
+![Response_time Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166085519-81d2720b-c75b-4422-a1b5-62d9d193c143.png)
+
 Below is the data for each GCPolicy with 4c-3G configuration.
 ```
 Trial	THROUGHPUT	RESPONSE_TIME	MAX_RESPONSE_TIME    RESPONSE_TIME_50p	RESPONSE_TIME_95p	RESPONSE_TIME_97p    CPU_REQ	MEM_REQ GC_POLICY
