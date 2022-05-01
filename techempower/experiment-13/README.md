@@ -31,6 +31,13 @@ Trial	THROUGHPUT	RESPONSE_TIME	MAX_RESPONSE_TIME	RESPONSE_TIME_50p	RESPONSE_TIME
 
 ```
 
+Below are the charts of Throughput and Response_time of GC Policy which has best configuration.
+
+![Throughput Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166127781-f989bdeb-1f72-4c43-b0c3-2fcad387df39.png)
+![Response_time Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166127788-f85d3fac-9c17-41dc-a02d-6fad903d2a3f.png)
+
+
+
 ### Configuration Details:
 ```
 - JDK                   eclipse-temurin:17
