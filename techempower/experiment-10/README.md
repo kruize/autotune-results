@@ -6,7 +6,8 @@
 - For details on slo and benchmark, look into [benchmark.yaml](benchmark.yaml)
 
 # Summary of data
-- Min response time is observed with following configuration
+- Min response time is observed with following configuration at trial #187
+
 ```
    [Layer]            [Tunable]              [Default, Range]      Best Config
 [Container] cpuRequest				[None, 1-4]		=   3.88
@@ -42,6 +43,46 @@
 [Hotspot]   UseTypeSpeculation			[true, ]		=  false
 
 ```
+
+- Min response time under 100 trials is observed with the following configuration at trial #97.
+
+```
+ [Layer]    [Tunable]       		      [Default, Range]  	     Best Config 
+
+[Container] cpuRequest				[None, 1-4]			=      4
+[Container] memoryRequest			[None, 270M-4096M]		=  2374M
+[Quarkus]   quarkus.thread-pool.core-threads	[1, 0-32]			=      8
+[Quarkus]   quarkus.thread-pool.queue-size	[unbounded, 0-10000]		=    780
+[Quarkus]   quarkus.datasource.jdbc.min-size	[0, 1-12]			=      4
+[Quarkus]   quarkus.datasource.jdbc.max-size	[12, 12-90]			=     68
+[Hotspot]   FreqInlineSize			[325, 325-500]			=    468
+[Hotspot]   MaxInlineLevel			[9, 9-50]			=     23
+[Hotspot]   MinInliningThreshold		[250, 0-200]			=    144
+[Hotspot]   CompileThreshold			[1500, 1000-10000]		=   4160
+[Hotspot]   CompileThresholdScaling		[1, 1-15]			=      6
+[Hotspot]   ConcGCThreads			[0, 0-8]			=      7
+[Hotspot]   InlineSmallCode			[1000, 500-5000]		=   2640
+[Hotspot]   LoopUnrollLimit			[50, 20-250]			=     52
+[Hotspot]   LoopUnrollMin			[4, 0-20]			=     11
+[Hotspot]   MinSurvivorRatio			[3, 3-48]			=     43
+[Hotspot]   NewRatio				[2, 1-10]			=      8
+[Hotspot]   TieredStopAtLevel			[4, 0-4]			=      4
+[Hotspot]   TieredCompilation			[false, ]			=   true
+[Hotspot]   AllowParallelDefineClass		[false, ]			=   true
+[Hotspot]   AllowVectorizeOnDemand		[true, ]			=  false
+[Hotspot]   AlwaysCompileLoopMethods		[false, ]			=   true
+[Hotspot]   AlwaysPreTouch			[false, ]			=   true
+[Hotspot]   AlwaysTenure			[false, ]			=   true
+[Hotspot]   BackgroundCompilation		[true, ]			=   true
+[Hotspot]   DoEscapeAnalysis			[true, ]			=   true
+[Hotspot]   UseInlineCaches			[true, ]			=   true
+[Hotspot]   UseLoopPredicate			[true, ]			=  false
+[Hotspot]   UseStringDeduplication		[false, ]			=  false
+[Hotspot]   UseSuperWord			[true, ]			=  false
+[Hotspot]   UseTypeSpeculation			[true, ]			=  false
+   
+```
+
 Along with the above tunables, other JVM options hardcoded are "-server -XX:MAXRamPercentage=70 -XX:+UseG1GC"
 Quarkus tunable quarkus.datasource.jdbc.initial-size is set same as quarkus.datasource.jdbc.min-size to avoid min-size being picked with default when min-size is set higher than initial-size.
 Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit when ParallelGCThreads are less than ConcGCThreads.
@@ -53,11 +94,19 @@ Baseline / Default configuration used is cpu request and limits set to 4 ; memor
 - Comparing the best configuration from autotune with the baseline, 
 	- Response time reduced by ~80.12%
 
-![Throughput](https://user-images.githubusercontent.com/17760990/151572920-231dc300-aac6-47be-9da1-7793fe03dc59.png)
+![Throughput](https://user-images.githubusercontent.com/17760990/166869161-802e0bff-3ff8-41f9-8c24-75ff2d4a265a.png)
 ![Response_time](https://user-images.githubusercontent.com/17760990/151572933-3ee5350c-0306-43ab-b6af-6b610b52db63.png)
 ![Max_response_time](https://user-images.githubusercontent.com/17760990/151572949-12bce231-d66b-4498-b542-3b660a473509.png)
 ![Cpu_usage](https://user-images.githubusercontent.com/17760990/151572964-707d781e-64e7-44c6-b66f-54ae0ed6b230.png)
 ![Memory_usage](https://user-images.githubusercontent.com/17760990/151572978-c8d41226-3d6c-48d3-9b4b-91e97cb4fda4.png)
+
+
+Below are the charts for trial #97 which has best config under 100 trials.
+
+![Throughput](https://user-images.githubusercontent.com/17760990/166868796-3463cf56-3400-4816-a263-52cc304d8b42.png)
+![Response_time](https://user-images.githubusercontent.com/17760990/166868840-ac78887f-7682-41f6-bdde-9d8d98de2b16.png)
+![Max_response_time](https://user-images.githubusercontent.com/17760990/166868857-a933ad52-3ccb-4370-82b2-0349a56f8a9d.png)
+
 
 ![Response_time VS Trials](https://user-images.githubusercontent.com/17760990/151573077-32e3cf21-dee1-4f65-b8ee-c5bf5af13d2e.png)
 ![Max_Response_time VS Trials](https://user-images.githubusercontent.com/17760990/151573089-834c14cc-a2e8-41b1-901b-41e8962d4ab9.png)
