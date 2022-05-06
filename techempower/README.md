@@ -53,7 +53,8 @@ experiment-10                                   Maximize `( 125 * throughput ) /
 experiment-11                                   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 ) / ( 1 + ( thrpt_ci * rsp_ci ))` on dedicated 4c-4GB SLP cluster with 31 tunables.
 experiment-12                                   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with constant container tunables on dedicated 4c-4GB SLP cluster with 29 tunables.
 experiment-13					Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with cpu, memory and GCPolicy as tunables on dedicated 8c-4GB SLP cluster
-experiment-14					Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with GCPolicy alone as tunable on dedicated SLP cluster with specific cpu and memory configurations.
+experiment-14					Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with GCPolicy alone as tunable on dedicated SLP cluster with specific cpu and memory configurations with Java17.
+experiment-15                                   Maximize `( 125 * throughput ) / ( 150 * transaction_response_time ) / ( (25 * max_response_time )/100 )` with GCPolicy alone as tunable on dedicated SLP cluster with specific cpu and memory configurations with Java11.
 experiment-HT                                   Experiment to compare performance with and without hyperthreading.
 experiment-mm_overhead                          Experiment to measure overhead of micrometer(MM) on shared hardware
 experiment-mm_overhead_dedicatedhardware        Experiment to measure overhead of micrometer(MM) on dedicated hardware.

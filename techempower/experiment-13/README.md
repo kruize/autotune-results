@@ -1,4 +1,4 @@
-## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the best configuration were run to reproduce the data and were updated at [manuals](manuals) dir
+## All the experiments in this folder were run on dedicated infrastructure.
 
 # Goal of the experiment:
 - Minimize transaction response time.
