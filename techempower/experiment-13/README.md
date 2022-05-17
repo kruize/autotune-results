@@ -1,4 +1,4 @@
-## All the experiments in this folder were run on dedicated infrastructure. Manual runs for the best configuration were run to reproduce the data and were updated at [manuals](manuals) dir
+## All the experiments in this folder were run on dedicated infrastructure.
 
 # Goal of the experiment:
 - Minimize transaction response time.
@@ -17,10 +17,11 @@
 The above experiment is to find which GCPolicy is suitable for the available cpu and memory. Tunables used for this experiment are cpu, memory and GCPolicy. Requests and limits of cpu and memory resources is set to same.
 
 - Trial 66 is considered as the best configuration in the experiment.
-- ParallelGC is considered more suitable for the experiment.
+- The best configuration from the experiment uses ParallelGC which showed high Throughput and lower Response time.
 
 
-From [experiment-data.csv](experiment-data.csv), below are the best configurations from each GCPolicy.
+Below are the best configurations from each GCPolicy in this experiment. All the trial data is available at [experiment-data.csv](experiment-data.csv), 
+
 ```
 Trial	THROUGHPUT	RESPONSE_TIME	MAX_RESPONSE_TIME	RESPONSE_TIME_50p	RESPONSE_TIME_95p	RESPONSE_TIME_97p	CPU_REQ	MEM_REQ	GC_POLICY	total_trials_with_GC
 29	37394.4		7.98641		1523.609537		3.33647			45.7232			51.4843			7.8	 1675M 	 UseG1GC 		6
@@ -31,7 +32,7 @@ Trial	THROUGHPUT	RESPONSE_TIME	MAX_RESPONSE_TIME	RESPONSE_TIME_50p	RESPONSE_TIME
 
 ```
 
-Below are the charts of Throughput and Response_time of GC Policy which has best configuration.
+Below are the charts of Throughput and Response_time of each GC Policy which has best configuration.
 
 ![Throughput Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166127781-f989bdeb-1f72-4c43-b0c3-2fcad387df39.png)
 ![Response_time Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166127788-f85d3fac-9c17-41dc-a02d-6fad903d2a3f.png)

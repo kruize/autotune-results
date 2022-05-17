@@ -1,4 +1,4 @@
-## All the experiments in this folder were run on dedicated infrastructure.
+## All the experiments in this folder were run on dedicated infrastructure. 
 
 # Goal of the experiment:
 - Minimize transaction response time.
@@ -12,7 +12,7 @@
 [Hotspot]	GCPolicy		[ , ]		      =  ParallelGC
 
 ```
-This experiment is to find the suitable GC policy with Java17 for a specific cpu and memory resources. Requests and limits of cpu and memory resources is set to same.
+This experiment is to find the suitable GC policy with Java 11 for a specific cpu and memory resources. Requests and limits of cpu and memory resources is set to same.
 All the experiments use "-server -XX:MaxRAMPercentage=70"
 
 Multiple small experiments with 10 trials were done as part of this experiment with following cpu and memory resources.
@@ -23,49 +23,46 @@ Multiple small experiments with 10 trials were done as part of this experiment w
 
 With all the above configurations, ParallelGC showed good Throughput and Response time.
 Below are the charts of Throughput, Response_time Vs GCPolicy for different cpu-memory configurations.
-![Throughput Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166085514-3a27e5a0-175c-4e1c-80d3-bc0d9f2d70bc.png)
-![Response_time Vs GCPolicy](https://user-images.githubusercontent.com/17760990/166085519-81d2720b-c75b-4422-a1b5-62d9d193c143.png)
 
 Below is the data for each GCPolicy with 4c-3G configuration.
 ```
 Trial	THROUGHPUT	RESPONSE_TIME	MAX_RESPONSE_TIME    RESPONSE_TIME_50p	RESPONSE_TIME_95p	RESPONSE_TIME_97p    CPU_REQ	MEM_REQ GC_POLICY
-6	20855.2		12.123		1809.035562		3.04707		79.6204			84.4543			4	 3072M 	 UseG1GC 
-9	22787.4		9.8592		1905.754714		2.60115		74.2921			80.9008			4	 3072M 	 UseParallelGC 
-7	20348		17.4423		1894.450675		4.43591		80.6273			85.2399			4	 3072M 	 UseSerialGC 
-1	18628.4		16.348		2002.802079		3.84892		85.2428			89.1064			4	 3072M 	 UseShenandoahGC 
-3	19380.9		15.6317		1966.780059		3.73461		83.7862			87.3885			4	 3072M 	 UseZGC 
+20	19950.80	13.94		1799.65			3.55		81.47			85.63			4	 3072M 	 UseG1GC 
+14	23558.90	7.75		2212.95			2.17		68.18			77.11			4	 3072M 	 UseParallelGC 
+3	20034.30	18.08		2407.42			4.84		81.39			85.71			4	 3072M 	 UseSerialGC 
+6	19379.30	15.97		2447.45			3.92		84.12			87.74			4	 3072M 	 UseShenandoahGC 
 ```
 Below is the data for each GCPolicy with 1c-3G configuration.
 ```
 Trial	THROUGHPUT	RESPONSE_TIME	MAX_RESPONSE_TIME    RESPONSE_TIME_50p	RESPONSE_TIME_95p	RESPONSE_TIME_97p    CPU_REQ	MEM_REQ	GC_POLICY
-1	5630.98		24.9629		4800.089152		0.796642	126.945			184.508			1	 3072M 	 UseG1GC 
-2	6243.38		17.0966		3996.111767		0.806451	107.855			134.698			1	 3072M 	 UseParallelGC 
-9	5581.72		22.6722		4242.027281		0.894095	140.995			191.508			1	 3072M 	 UseSerialGC 
-10	5057.51		23.9023		4307.152263		0.817002	152.38			190.929			1	 3072M 	 UseShenandoahGC 
-6	5355.62		23.8701		4918.530671		0.809669	109.248			181.624			1	 3072M 	 UseZGC 
+17	5394.34		23.68		7194.99			0.80		132.48			138.74			1	 3072M 	 UseG1GC 
+6	6125.29		18.43		6837.51			0.77		107.07			116.62			1	 3072M 	 UseParallelGC 
+12	5521.98		29.29		5526.04			0.89		136.00			165.17			1	 3072M 	 UseSerialGC 
+3	5099.04		27.64		6663.64			0.85		186.89			197.93			1	 3072M 	 UseShenandoahGC 
+
 ```
 
 Below is the data for each GCPolicy with 4c-8G configuration. In 10 trials, it didn't pick G1GC.
 ```
 Trial   THROUGHPUT      RESPONSE_TIME   MAX_RESPONSE_TIME    RESPONSE_TIME_50p  RESPONSE_TIME_95p       RESPONSE_TIME_97p    CPU_REQ    MEM_REQ GC_POLICY
-5	22387.5		7.95889		1802.014751		2.14989		68.2646			77.2492			4	 8192M 	 UseParallelGC 
-1	20459.5		15.7529		2129.329775		3.99129		79.7467			84.5801			4	 8192M 	 UseSerialGC 
-6	20217.2		14.5761		2654.251279		3.73036		82.7317			86.6216			4	 8192M 	 UseShenandoahGC 
-3	20316.9		13.9452		1749.218772		3.40838		81.819			85.858			4	 8192M 	 UseZGC 
+9	20258.40	13.67		2125.64			3.59		81.21			85.43			4	 8192M 	 UseG1GC 
+14	22227.40	9.53		2211.32			2.55		73.97			80.72			4	 8192M 	 UseParallelGC 
+10	20064.70	17.45		2019.37			4.66		80.46			85.13			4	 8192M 	 UseSerialGC 
+6	20463.70	12.88		2463.77			3.20		80.43			85.14			4	 8192M 	 UseShenandoahGC 
 ```
 
 Below is the data for each GCPolicy with 1c-8G configuration. In 10 trials, it didn't pick SerialGC.
 ```
 Trial   THROUGHPUT      RESPONSE_TIME   MAX_RESPONSE_TIME    RESPONSE_TIME_50p  RESPONSE_TIME_95p       RESPONSE_TIME_97p    CPU_REQ    MEM_REQ GC_POLICY
-1	5750.9		19.717		4494.694224		0.840208	133.599			190.149			1	 8192M 	 UseG1GC 
-7	6235.2		17.2235		4003.897704		0.749258	105.335			132.198			1	 8192M 	 UseParallelGC 
-9	5530.69		18.0135		4605.443452		0.72012		106.817			134.356			1	 8192M 	 UseShenandoahGC 
-2	5539.67		22.4398		4366.767055		0.763493	107.236			133.794			1	 8192M 	 UseZGC 
+20	5344.06		25.57		5543.04			0.85		111.08			187.61			1	 8192M 	 UseG1GC 
+19	6088.81		22.50		5398.98			0.79		107.65			135.15			1	 8192M 	 UseParallelGC 
+1	5530.11		28.76		5777.47			0.90		133.43			185.76			1	 8192M 	 UseSerialGC 
+11	5352.46		23.45		5701.98			0.79		133.74			187.65			1	 8192M 	 UseShenandoahGC 
 ```
 
 ### Configuration Details:
 ```
-- JDK                   eclipse-temurin:17
+- JDK                   eclipse-temurin:11
 - Quarkus               1.13.2.F
 ```
 - Machine: 
