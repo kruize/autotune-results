@@ -18,6 +18,10 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 - Comparing the best configuration from autotune with the baseline, 2% improvement in Throughput is observed.
 - Applying the same configuration with Quarkus v 2.9.1.F shows 1.2% improvement in Throughput.
 
+
+![Throughput](https://user-images.githubusercontent.com/17760990/170766570-5fbfbefc-213f-4c6d-b125-f81de858243c.png)
+
+
 ### Configuration Details:
 ```
 - JVM                   openjdk:11.0.6
