@@ -23,6 +23,9 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 
 ![Memory](memory.png)
 
+![Throughput Vs Trials](throughputVStrials.png)
+
+
 ### Configuration Details:
 ```
 - JVM                   openjdk:11.0.6
