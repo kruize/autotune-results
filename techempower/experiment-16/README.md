@@ -8,19 +8,17 @@
 # Summary of data
 
 This experiment uses constant container tunables. The configuration used is cpu request and limit set to 4 ; memory request and limit set to 4096M.
-Along with the above tunables, other JVM options hardcoded are "-server -XX:MAXRamPercentage=70"
+Along with the above tunables, other JVM options hardcoded are "-server -XX:MAXRamPercentage=70".
 Quarkus tunable quarkus.datasource.jdbc.initial-size is set same as quarkus.datasource.jdbc.min-size to avoid min-size being picked with default when min-size is set higher than initial-size.
 Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit when ParallelGCThreads are less than ConcGCThreads.
 
-
-- The configuration used by the experiment is updated at [config.csv](manuals/config.csv)
+- The baseline and autotune configurations from the experiment is updated at [config.csv](manuals/config.csv). 
+- Two baselines are used for comparison to incorporate the configuration changes by TFB community version. baseline2 has an additional parameter "-Dquarkus.http.io-threads" compared to baseline1.
 - With optuna_TPE as an algorithm, trial 84 is considered as the best configuration in the experiment.
 - Comparing the best configuration from autotune with the baseline, 2% improvement in Throughput is observed.
 - Applying the same configuration with Quarkus v 2.9.1.F shows 1.2% improvement in Throughput.
 
-
-![Throughput](https://user-images.githubusercontent.com/17760990/170766570-5fbfbefc-213f-4c6d-b125-f81de858243c.png)
-
+![Throughput](Throughput.png)
 
 ### Configuration Details:
 ```
