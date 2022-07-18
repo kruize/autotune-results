@@ -1,0 +1,47 @@
+application_name: spring-petclinic
+slo:
+  - slo_class: throughput
+    objective_function: throughput
+    direction: maximize
+    function_variables:
+      - name: throughput
+        value_type: double
+layers:
+  - layer_level: 1
+    tunables:
+      - name: virtualized
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: aggressive
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: shareclasses
+        value_type: categorical
+        choices: ["true", "false"]
+      - name: gc
+        value_type: categorical
+        choices: ["gencon", "balanced", "optavgpause", "optthruput", "metronome"]
+    layer_name: openj9
+    layer_details: openj9 tunables
+
+git_url: 'https://github.com/kusumachalasani/hpo.git'
+git_branch: 'main'
+benchmark: spring-petclinic
+image: 'kruize/spring_petclinic:2.2.0-jdk-11.0.8-openj9-0.21.0'
+iterations: 3
+warmupIterations: 3
+warmupTime: 60 s
+measurementIterations: 3
+measurementTime: 60 s
+connections: 256
+instances: 1
+server_config:
+  - name: scalelabperf
+  - master_nodes: 3
+  - worker_nodes: 3
+  - cpu_per_node: 32
+  - mem_per_node: 64G
+client_config:
+  - name: scalelabperf-client
+  - cpu: 64
+  - mem: 64G
