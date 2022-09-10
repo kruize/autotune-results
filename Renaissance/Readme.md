@@ -11,8 +11,17 @@ To generate the results from the Renaissance Benchmark,we need to:
  
  You,also need to pull the docker image of renaissance onto your local system
  
+  Download a driver (docker or podman)
+ 
+ [Docker](https://docs.docker.com/engine/install/)
+ 
+ [Podman](https://podman.io/getting-started/installation)
+ 
+ Use the installed driver to pull the Renaissance docker image
+ 
  `podman pull prakalp23/renaissance1041:latest`
  
+ `docker pull prakalp23/renaissance1041:latest`
  # For Running The Benchmark
  
  Start the minikube cluster,here we use podman as a driver,you can use a driver of your choice
