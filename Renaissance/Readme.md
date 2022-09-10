@@ -1,4 +1,4 @@
-This folder contains the experiment results of the Renaissance Benchmark taking Prometheus Metrics.
+This directory contains the experiment results of the Renaissance Benchmark taking Prometheus Metrics.
 # Prereuisites
 To generate the results from the Renaissance Benchmark,we need to:  
 
