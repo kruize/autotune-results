@@ -48,6 +48,6 @@ To generate the results from the Renaissance Benchmark,we need to:
  
  After the results are generated use the featurizer.py to turn the data into a csv format and the model.py to perform Accuracy testing of ML Algorithms on the csv file
  
- To further understand the flow of the project,refer the presentation present on this repository.
+ To further understand the flow of the project,refer the presentation present on this repository..
  
  `
