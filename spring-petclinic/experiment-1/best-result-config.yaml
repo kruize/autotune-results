@@ -1,0 +1,62 @@
+experiment_id: 2190310A384BC90EF
+application_name: petclinic-sample
+trials:
+  - app-version: v1
+    info:
+      trial_id: ''
+      trial_num: 99
+    settings:
+      trail_settings:
+        trial_run: 6mins
+        trial_measurement_time: 3mins
+        trial_iterations: 3
+      deployment_settings:
+        deployment_policy:
+          type: newDeployment
+          target_env: qa
+          agent: CLI
+        deployment_tracking:
+          trackers:
+            - training
+            - production
+    deployments:
+      - training:
+          deployment_name: petclinic-sample
+          state: ''
+          result: ''
+          result_info: ''
+          result_error: ''
+          metrics:
+            - name: cpu_usage
+              query: sum(node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate) by (pod)
+              datasource: prometheus
+            - name: memory_usage
+              query: sum(container_memory_working_set_bytes) by (pod)
+              datasource: prometheus
+          config:
+            - name: update requests and limits
+              spec:
+                template:
+                  spec:
+                    container:
+                      resources:
+                        requests:
+                          cpu: 4
+                          memory: 6192Mi
+                        limits:
+                          cpu: 4
+                          memory: 6192Mi
+            - name: update env
+              spec:
+                template:
+                  spec:
+                    container:
+                      env:
+                        JDK_JAVA_OPTIONS: >-
+                          -XX:+UseParallelGC -XX:FreqInlineSize=356 -XX:MaxInlineLevel=10 -XX:MinInliningThreshold=120
+                          -XX:CompileThreshold=4800 -XX:CompileThresholdScaling=6.6 -XX:ConcGCThreads=2 -XX:ParallelGCThreads=2
+                          -XX:InlineSmallCode=1515 -XX:LoopUnrollLimit=58 -XX:LoopUnrollMin=15 -XX:MinSurvivorRatio=7 -XX:NewRatio=1
+                          -XX:TieredStopAtLevel=4 -XX:+TieredCompilation -XX:-AllowParallelDefineClass  -XX:-AllowVectorizeOnDemand
+                          -XX:+AlwaysCompileLoopMethods -XX:+AlwaysPreTouch -XX:-AlwaysTenure -XX:-BackgroundCompilation -XX:-DoEscapeAnalysis
+                          -XX:+UseInlineCaches -XX:+UseLoopPredicate -XX:-UseStringDeduplication -XX:+UseSuperWord -XX:+UseTypeSpeculation
+                          -Dio.netty.buffer.checkBounds=false -Dio.netty.buffer.checkAccessible=false
