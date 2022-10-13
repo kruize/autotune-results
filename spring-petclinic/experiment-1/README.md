@@ -34,10 +34,31 @@ Below data is based on the experiment with fixed resources when run with 1000 us
 ![Cpu_usage](plots/cpu_usage.png)
 ![Memory_usage](plots/memory_usage.png)
 
+#
+- Tunable Importance plot shows the importance of each tunable in an experiment.
+- CompileThreshold, TieredCompilation and NewRatio has the highest importance in this experiment.
+
 ![Tunable_Importance](plots/tunable_importance.png)
+
+#
+- Optimization History plots shows the objective value for all the trials and the history of best value in an experiment.
 ![Optimization_history](plots/optimization_history.png)
+
+#
+-Parallel Coordinate plot shows the high-dimensional parameter relationships in an experiment.
+-Below plot shows the relationship with all the tunables available in an experiment.
 ![Parallel Coordinate](plots/parallel_coordinate.png)
 
+#
+-Slice Plot shows the tunable relationship for an objective value.
+-Darker the circles,higher the trial number.
+-X-axis of each slice plot is a tunable and y-axis is objective value.
+-Below link has the slice plots for all the tunables in the experiment.
+
+![Slice of all tunables](https://htmlpreview.github.io/?https://raw.githubusercontent.com/kruize/autotune-results-1/main/spring-petclinic/experiment-1/plots/slice.html)
+
+#
+Below are the Response_time and Throughput plots for the trials in the experiment.
 ![Response_time VS Trials](plots/responsetimeVStrials.png)
 ![Throughput VS Trials](plots/throughputVStrials.png)
 
