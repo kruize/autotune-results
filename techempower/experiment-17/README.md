@@ -17,13 +17,17 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 - Trial 104 is considered as the best configuration in the experiment.
 - Comparing the best configuration from autotune with the baseline, 2% improvement in Throughput is observed.
 
-![Throughput](Throughput.png)
+![Throughput](plots/Throughput.png)
 
-![CPU](cpu.png)
+![CPU](plots/cpu.png)
 
-![Memory](memory.png)
+![Memory](plots/memory.png)
 
-![Throughput Vs Trials](throughputVStrials.png)
+![Tunable_Importance](plots/tunable_importance.png)
+
+![Optimization History](plots/optimization_history.png)
+
+![Throughput Vs Trials](plots/throughputVStrials.png)
 
 
 ### Configuration Details:
