@@ -37,7 +37,8 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 #
 - Contour plots shows the parameter relationship.
 - Below contour plot shows the relation between TieredStopAtLevel and NewRatio 
-- This plot shows, NewRatio tunable gave the best objective value when NewRatio is >=6 and TieredStopAtLevel>2 most of the times. The ligher area in the plot indicates high objective value. 
+- This plot shows, NewRatio tunable gave the best objective value when NewRatio is >=6 and TieredStopAtLevel>2 most of the times. 
+- x-axis of the plot is NewRatio and y-axis is TieredStopAtLevel. The ligher area in the plot indicates high objective value. 
 - The default values of NewRatio is 2 and TieredStopAtLevel is 4. 
 - Although, the best configuration of the experiment picked NewRatio as 10 and TieredStopAtLevel as 2, there are other combinations which can help tune the experiments.
 - This is one of the parameter relation generated in this experiment.
@@ -51,6 +52,12 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 ![Parallel_Coordinate for all tunables](plots/parallel_coordinate.png)
 
 
+#
+- Slice Plot shows the tunable relationship for an objective value.
+- Darker the circles,higher the trial number.
+- X-axis of each slice plot is a tunable and y-axis is objective value.
+- Below link has the slice plots for all the tunables in the experiment.
+- [Slice plot](https://htmlpreview.github.io/?https://raw.githubusercontent.com/kruize/autotune-results/main/spring-petclinic/experiment-1/plots/slice.html)
 
 ### Configuration Details:
 ```
