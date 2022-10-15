@@ -17,14 +17,47 @@ Hotspot tunable ParallelGCThreads set same as ConcGCThreads to avoid JVM exit wh
 - Trial 104 is considered as the best configuration in the experiment.
 - Comparing the best configuration from autotune with the baseline, 2% improvement in Throughput is observed.
 
-![Throughput](Throughput.png)
+![Throughput](plots/Throughput.png)
 
-![CPU](cpu.png)
+![CPU](plots/cpu.png)
 
-![Memory](memory.png)
+![Memory](plots/memory.png)
 
-![Throughput Vs Trials](throughputVStrials.png)
+#
+- Tunable Importance plot shows the importance of each tunable in an experiment. 
+- TieredCompilation had the highest importance followed by TieredStopAtLevel, NewRatio and gcpolicy tunables.
 
+![Tunable_Importance](plots/tunable_importance.png)
+
+#
+- Optimization History plots shows the objective value for all the trials and the history of best value in an experiment.
+
+![Optimization History](plots/optimization_history.png)
+
+#
+- Contour plots shows the parameter relationship.
+- Below contour plot shows the relation between TieredStopAtLevel and NewRatio 
+- This plot shows, NewRatio tunable gave the best objective value when NewRatio is >=6 and TieredStopAtLevel>2 most of the times. 
+- x-axis of the plot is NewRatio and y-axis is TieredStopAtLevel. The ligher area in the plot indicates high objective value. 
+- The default values of NewRatio is 2 and TieredStopAtLevel is 4. 
+- Although, the best configuration of the experiment picked NewRatio as 10 and TieredStopAtLevel as 2, there are other combinations which can help tune the experiments.
+- This is one of the parameter relation generated in this experiment.
+
+![NewRatio vs TieredStopAtLevel_Contour](plots/contour_tieredstopatlevel_newratio.png)
+
+#
+- Parallel Coordinate plot shows the high-dimensional parameter relationships in an experiment.
+- Below plot shows the relationship with all the tunables available in an experimnt.
+
+![Parallel_Coordinate for all tunables](plots/parallel_coordinate.png)
+
+
+#
+- Slice Plot shows the tunable relationship for an objective value.
+- Darker the circles,higher the trial number.
+- X-axis of each slice plot is a tunable and y-axis is objective value.
+- Below link has the slice plots for all the tunables in the experiment.
+- [Slice plot](https://htmlpreview.github.io/?https://raw.githubusercontent.com/kruize/autotune-results/main/spring-petclinic/experiment-1/plots/slice.html)
 
 ### Configuration Details:
 ```
