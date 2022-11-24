@@ -5,30 +5,34 @@ import numpy as np
 
 
 def overall_loop(loc):
-    '''
-    loc: location where all iterations are located
-    e.g. loc = results/renaissance-202207201850/scale_1
-    '''
 
     data = []
     exp_names = []
+    iter=[]
     for f in os.listdir(loc):
+
         if not os.path.isdir(loc + "/" + f):
             continue
 
         for itr_path in os.listdir(os.path.join(loc, f)):
-            # each results will contain data for one row
+            if itr_path.split('.')[-1] == 'log':
+                continue
             iter_path_url = loc + "/" + f + '/' + itr_path
+            results_list = featurize_results(iter_path_url)
+            data1=pd.DataFrame(results_list)
+            data1['Iteration'] ='_'.join(itr_path.split(os.path.sep)[-2:])
+            data1['exp_name']=os.path.basename(loc)
+            data.append(data1)
 
-            results = featurize_results(iter_path_url)
+            #iter.append('_'.join(itr_path.split(os.path.sep)[-2:]))
+            #exp_names.append(os.path.basename(loc))
 
-            data.append(results)
 
-            exp_names.append('_'.join(itr_path.split(os.path.sep)[-2:])
-                             )
-
-    data = pd.DataFrame(data)
-    data['exp_name'] = exp_names
+    #data = pd.DataFrame(data)
+    #data['Iteration']=iter
+    #data['exp_name']=exp_names
+    data=pd.concat(data,axis=0)
+    data.to_csv('try.csv', index=None)
 
     return data
 
@@ -39,7 +43,7 @@ def featurize_results(loc):
     e.g. loc = results/renaissance-202207201850/scale_1/ITR-0
     '''
 
-    results = {}
+    results_list = []
     for f in glob.glob(os.path.join(loc, "*.json")):
         print(f)
         if "warmup" in f:
@@ -47,21 +51,25 @@ def featurize_results(loc):
 
         # data = json.load(open(f))
         data = convfiletojson(f)
-        results = featurize_metrics(data, f.split('/')[-1].rstrip('.json'), results=results)
+        results = featurize_metrics(data, f.split('/')[-1].split('-')[0])
+        results_list.append(results)
+    return results_list
 
-    return results
 
-
-def featurize_metrics(data, metric_name, results):
+def featurize_metrics(data, metric_name):
     '''
     All particular calculations for the metrics should go here
     '''
+    results={}
+    results['metric-name'] = metric_name
 
-    results[f'{metric_name}_max'] = np.max(data[metric_name])
-    results[f'{metric_name}_min'] = np.min(data[metric_name])
+    # import ipdb
+   # ipdb.set_trace()
+    results[f'max'] = np.max(data['value'])
+    results[f'min'] = np.min(data['value'])
 
     for p in [10, 25, 50, 75, 90]:
-        results[f'{metric_name}_p'] = np.percentiles(data[metric_name], p)
+        results[f'{p}th-percentile'] = np.percentile(data['value'], p)
 
     # any more metrics should go here
 
@@ -78,14 +86,14 @@ def convfiletojson(loc) -> dict:
         data['Iteration'] = os.path.basename(head)
         head1, tail1 = os.path.split(head)
         head2, tail2 = os.path.split(head1)
-        data['Exp_names'] = os.path.basename(head2)
+        data['Iteration'] = os.path.basename(head2)
         return data
 
     # out_file=open("tests.json","w")
     # json.dump(dict1, out_file, indent = 4, sort_keys = False)
 
 
-def createcsv(loc):
+"""def createcsv(loc):
     df = pd.read_csv(loc, skip_blank_lines=False)
     str = ""
     file1 = open(loc)
@@ -96,8 +104,10 @@ def createcsv(loc):
         print(line)
         str = str + line
     str.transpose()
-    df.columns = ['Exp_names', ' Iteration', 'Metric-name', 'timestamp', 'value']
-    df.to_csv('ppj.csv', index=None)
-loc = "/Users/prakalp/Documents/GitHub/autotune-results/Renaissance/exp_results"
+    df.columns = ['exp_name', ' Iteration', 'Metric-name', 'timestamp', 'value']
+    df.to_csv('try1.csv', index=None)"""
 
-overall_loop(loc)
+
+loc = "/home/kchalasa/IdeaProjects/benchmarks/renaissance/results/page-rank"
+
+results_list=overall_loop(loc)
