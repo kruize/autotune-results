@@ -1,0 +1,121 @@
+Scenario #,Scenario,cpuRequest,cpuLimit,cpuUsage,cpuThrottle,cpuMax,Workload,CPUIntensive
+1,cpuRequest=cpuLimit + high cpu + highThrottle + cpuIntensive,Same as Limit,Same as Request,High,High,,,Yes
+2,cpuRequest=cpuLimit + high cpu + highThrottle + cpuIntensive + 10%W,Same as Limit,Same as Request,High,High,,10.00%,Yes
+3,cpuRequest=cpuLimit + high cpu + highThrottle + cpuIntensive + 100%W,Same as Limit,Same as Request,High,High,,100.00%,Yes
+4,cpuRequest=cpuLimit + high cpu + lowThrottle + cpuIntensive,Same as Limit,Same as Request,High,Low,,,Yes
+5,cpuRequest=cpuLimit + high cpu + lowThrottle + cpuIntensive + 10%W,Same as Limit,Same as Request,High,Low,,10.00%,Yes
+6,cpuRequest=cpuLimit + high cpu + lowThrottle + cpuIntensive + 100%W,Same as Limit,Same as Request,High,Low,,100.00%,Yes
+7,cpuRequest=cpuLimit + moderate cpu + lowThrottle,Same as Limit,Same as Request,Moderate,Low,,,No
+8,cpuRequest=cpuLimit + moderate cpu + lowThrottle  + 10%W,Same as Limit,Same as Request,Moderate,Low,,10.00%,No
+9,cpuRequest=cpuLimit + moderate cpu + lowThrottle  + 100%W,Same as Limit,Same as Request,Moderate,Low,,100.00%,No
+10,cpuRequest=cpuLimit + moderate cpu + noThrottle,Same as Limit,Same as Request,Moderate,No,,,No
+11,cpuRequest=cpuLimit + moderate cpu + noThrottle  + 10%W,Same as Limit,Same as Request,Moderate,No,,10.00%,No
+12,cpuRequest=cpuLimit + moderate cpu + noThrottle  + 100%W,Same as Limit,Same as Request,Moderate,No,,100.00%,No
+13,cpuRequest=cpuLimit + low cpu + lowThrottle,Same as Limit,Same as Request,Low,Low,,,No
+14,cpuRequest=cpuLimit + low cpu + lowThrottle  + 10%W,Same as Limit,Same as Request,Low,Low,,10.00%,No
+15,cpuRequest=cpuLimit + low cpu + lowThrottle  + 100%W,Same as Limit,Same as Request,Low,Low,,100.00%,No
+16,cpuRequest=cpuLimit + low cpu + noThrottle,Same as Limit,Same as Request,Low,No,,,No
+17,cpuRequest=cpuLimit + low cpu + noThrottle  + 10%W,Same as Limit,Same as Request,Low,No,,10.00%,No
+18,cpuRequest=cpuLimit + low cpu + noThrottle  + 100%W,Same as Limit,Same as Request,Low,No,,100.00%,No
+19,cpuRequest=cpuLimit + Idle cpu + noThrottle ,Same as Limit,Same as Request,Low,No,,0.00%,No
+20,cpuRequest=cpuLimit + nodata cpu + highThrottle  + cpuMax,Same as Limit,Same as Request,No data,High,Data exists,,No
+21,cpuRequest=cpuLimit + nodata cpu + highThrottle,Same as Limit,Same as Request,No data,High,No data,,No
+22,cpuRequest=cpuLimit + nodata cpu + lowThrottle  + cpuMax,Same as Limit,Same as Request,No data,Low,Data exists,,No
+23,cpuRequest=cpuLimit + nodata cpu + lowThrottle,Same as Limit,Same as Request,No data,Low,No data,,No
+24,cpuRequest=cpuLimit + zero cpu + lowThrottle  + cpuMax,Same as Limit,Same as Request,Zero,Low,Data exists,,No
+25,cpuRequest=cpuLimit + zero cpu + lowThrottle,Same as Limit,Same as Request,Zero,Low,No data,,No
+26,cpuRequest=cpuLimit + zero cpu + noThrottle  + cpuMax,Same as Limit,Same as Request,Zero,No,Data exists,,No
+27,cpuRequest=cpuLimit + zero cpu + noThrottle,Same as Limit,Same as Request,Zero,No,No data,,No
+28,high cpuRequest+high cpuLimit +highcpu + highThrottle + cpuIntensive,High,High,High,High,,,Yes
+29,high cpuRequest+high cpuLimit +highcpu + highThrottle + cpuIntensive + 10%W,High,High,High,High,,10.00%,Yes
+30,high cpuRequest+high cpuLimit +highcpu + highThrottle + cpuIntensive + 100%W,High,High,High,High,,100.00%,Yes
+31,high cpuRequest+high cpuLimit +highcpu + lowThrottle + cpuIntensive,High,High,High,Low,,,Yes
+32,high cpuRequest+high cpuLimit +highcpu + lowThrottle + cpuIntensive + 10%W,High,High,High,Low,,10.00%,Yes
+33,high cpuRequest+high cpuLimit +highcpu + lowThrottle + cpuIntensive + 100%W,High,High,High,Low,,100.00%,Yes
+34,high cpuRequest+high cpuLimit +highcpu + noThrottle + cpuIntensive,High,High,High,No,,,Yes
+35,high cpuRequest+high cpuLimit +highcpu + noThrottle + cpuIntensive + 10%W,High,High,High,No,,10.00%,Yes
+36,high cpuRequest+high cpuLimit +highcpu + noThrottle + cpuIntensive + 100%W,High,High,High,No,,100.00%,Yes
+37,high cpuRequest+high cpuLimit + moderatecpu + lowThrottle,High,High,Moderate,Low,,,No
+38,high cpuRequest+high cpuLimit + moderatecpu + lowThrottle + 10%W,High,High,Moderate,Low,,10.00%,No
+39,high cpuRequest+high cpuLimit + moderatecpu + lowThrottle + 100%W,High,High,Moderate,Low,,100.00%,No
+40,high cpuRequest+high cpuLimit + moderatecpu + noThrottle,High,High,Moderate,No,,,No
+41,high cpuRequest+high cpuLimit + moderatecpu + noThrottle + 10%W,High,High,Moderate,No,,10.00%,No
+42,high cpuRequest+high cpuLimit + moderatecpu + noThrottle + 100%W,High,High,Moderate,No,,100.00%,No
+43,high cpuRequest+high cpuLimit + Idlecpu + noThrottle,High,High,Low,No,,0.00%,No
+44,high cpuRequest+high cpuLimit + lowcpu + noThrottle,High,High,Low,No,,,No
+45,high cpuRequest+high cpuLimit + lowcpu + noThrottle + 10%W,High,High,Low,No,,10.00%,No
+46,high cpuRequest+high cpuLimit + lowcpu + noThrottle + 100%W,High,High,Low,No,,100.00%,No
+47,high cpuRequest+high cpuLimit + nodata cpu + noThrottle + cpuMax,High,High,No data,No,Data exists,,No
+48,high cpuRequest+high cpuLimit + nodata cpu + noThrottle,High,High,No data,No,No data,,No
+49,high cpuRequest+high cpuLimit + zero cpu + noThrottle + cpuMax,High,High,Zero,No,Data exists,,No
+50,high cpuRequest+high cpuLimit + zero cpu + noThrottle,High,High,Zero,No,No data,,No
+51,high cpuRequest+no cpuLimit + high cpu + noThrottle+ cpuIntensive,High,No,High,No,,,Yes
+52,high cpuRequest+no cpuLimit + high cpu + noThrottle+ cpuIntensive +10%W,High,No,High,No,,10.00%,Yes
+53,high cpuRequest+no cpuLimit + high cpu + noThrottle+ cpuIntensive +100%W,High,No,High,No,,100.00%,Yes
+54,high cpuRequest+no cpuLimit + Idle cpu + noThrottle,High,No,Low,No,,0.00%,No
+55,high cpuRequest+no cpuLimit + low cpu + noThrottle,High,No,Low,No,,,No
+56,high cpuRequest+no cpuLimit + low cpu + noThrottle +10%W,High,No,Low,No,,10.00%,No
+57,high cpuRequest+no cpuLimit + low cpu + noThrottle +100%W,High,No,Low,No,,100.00%,No
+58,high cpuRequest+no cpuLimit + nodata cpu + noThrottle +cpuMax,High,No,No data,No,Data exists,,No
+59,high cpuRequest+no cpuLimit + nodata cpu + noThrottle,High,No,No data,No,No data,,No
+60,high cpuRequest+no cpuLimit + zero cpu + noThrottle +cpuMax,High,No,Zero,No,Data exists,,No
+61,high cpuRequest+no cpuLimit + zero cpu + noThrottle,High,No,Zero,No,No data,,No
+62,low cpuRequest+high cpuLimit + high cpu + highThrottle + cpuIntensive,Low,High,High,High,,,Yes
+63,low cpuRequest+high cpuLimit + high cpu + highThrottle + cpuIntensive + 10%W,Low,High,High,High,,10.00%,Yes
+64,low cpuRequest+high cpuLimit + high cpu + highThrottle + cpuIntensive + 100%W,Low,High,High,High,,100.00%,Yes
+65,low cpuRequest+high cpuLimit + high cpu + lowThrottle + cpuIntensive,Low,High,High,Low,,,Yes
+66,low cpuRequest+high cpuLimit + high cpu + lowThrottle + cpuIntensive + 10%W,Low,High,High,Low,,10.00%,Yes
+67,low cpuRequest+high cpuLimit + high cpu + lowThrottle + cpuIntensive + 100%W,Low,High,High,Low,,100.00%,Yes
+68,low cpuRequest+high cpuLimit + moderate cpu + lowThrottle,Low,High,Moderate,Low,,,No
+69,low cpuRequest+high cpuLimit + moderate cpu + lowThrottle + 10%W,Low,High,Moderate,Low,,10.00%,No
+70,low cpuRequest+high cpuLimit + moderate cpu + lowThrottle + 100%W,Low,High,Moderate,Low,,100.00%,No
+71,low cpuRequest+high cpuLimit + moderate cpu + noThrottle,Low,High,Moderate,No,,,No
+72,low cpuRequest+high cpuLimit + moderate cpu + noThrottle + 10%W,Low,High,Moderate,No,,10.00%,No
+73,low cpuRequest+high cpuLimit + moderate cpu + noThrottle + 100%W,Low,High,Moderate,No,,100.00%,No
+74,low cpuRequest+high cpuLimit + low cpu + noThrottle + 0%W,Low,High,Low,No,,0.00%,No
+75,low cpuRequest+high cpuLimit + low cpu + noThrottle,Low,High,Low,No,,,No
+76,low cpuRequest+high cpuLimit + low cpu + noThrottle + 10%W,Low,High,Low,No,,10.00%,No
+77,low cpuRequest+high cpuLimit + low cpu + noThrottle + 100%W,Low,High,Low,No,,100.00%,No
+78,low cpuRequest+high cpuLimit + nodata cpu + noThrottle + cpuMax,Low,High,No data,No,Data exists,,No
+79,low cpuRequest+high cpuLimit + nodata cpu + noThrottle,Low,High,No data,No,No data,,No
+80,low cpuRequest+high cpuLimit + zero cpu + noThrottle + cpuMax,Low,High,Zero,No,Data exists,,No
+81,low cpuRequest+high cpuLimit + zero cpu + noThrottle,Low,High,Zero,No,No data,,No
+82,low cpuRequest+no cpuLimit + high cpu + noThrottle + cpuIntensive,Low,No,High,No,,,Yes
+83,low cpuRequest+no cpuLimit + high cpu + noThrottle + cpuIntensive + 10%W,Low,No,High,No,,10.00%,Yes
+84,low cpuRequest+no cpuLimit + high cpu + noThrottle + cpuIntensive + 100%W,Low,No,High,No,,100.00%,Yes
+85,low cpuRequest+no cpuLimit + Idle cpu + noThrottle,Low,No,Low,No,,0.00%,No
+86,low cpuRequest+no cpuLimit + low cpu + noThrottle,Low,No,Low,No,,,No
+87,low cpuRequest+no cpuLimit + low cpu + noThrottle + 10%W,Low,No,Low,No,,10.00%,No
+88,low cpuRequest+no cpuLimit + low cpu + noThrottle + 100%W,Low,No,Low,No,,100.00%,No
+89,low cpuRequest+no cpuLimit + nodata cpu + noThrottle + cpuMax,Low,No,No data,No,Data exists,,No
+90,low cpuRequest+no cpuLimit + nodata cpu + noThrottle,Low,No,No data,No,No data,,No
+91,low cpuRequest+no cpuLimit + zero cpu + noThrottle + cpuMax,Low,No,Zero,No,Data exists,,No
+92,low cpuRequest+no cpuLimit + zero cpu + noThrottle,Low,No,Zero,No,No data,,No
+93,no cpuRequest+low cpuLimit + high cpu + highThrottle + cpuIntensive,No,Low,High,High,,,Yes
+94,no cpuRequest+low cpuLimit + high cpu + highThrottle + cpuIntensive + 10%W,No,Low,High,High,,10.00%,Yes
+95,no cpuRequest+low cpuLimit + high cpu + highThrottle + cpuIntensive + 100%W,No,Low,High,High,,100.00%,Yes
+96,no cpuRequest+low cpuLimit + low cpu + lowThrottle,No,Low,Low,Low,,,No
+97,no cpuRequest+low cpuLimit + low cpu + lowThrottle + 10%W,No,Low,Low,Low,,10.00%,No
+98,no cpuRequest+low cpuLimit + low cpu + lowThrottle + 100%W,No,Low,Low,Low,,100.00%,No
+99,no cpuRequest+low cpuLimit + Idle cpu + noThrottle + 0%W,No,Low,Low,No,,0.00%,No
+100,no cpuRequest+low cpuLimit + low cpu + noThrottle,No,Low,Low,No,,,No
+101,no cpuRequest+low cpuLimit + low cpu + noThrottle + 10%W,No,Low,Low,No,,10.00%,No
+102,no cpuRequest+low cpuLimit + low cpu + noThrottle + 100%W,No,Low,Low,No,,100.00%,No
+103,no cpuRequest+low cpuLimit + nodata cpu + noThrottle + cpuMax,No,Low,No data,No,Data exists,,No
+104,no cpuRequest+low cpuLimit + nodata cpu + noThrottle,No,Low,No data,No,No data,,No
+105,no cpuRequest+low cpuLimit + zero cpu + noThrottle + cpuMax,No,Low,Zero,No,Data exists,,No
+106,no cpuRequest+low cpuLimit + zero cpu + noThrottle,No,Low,Zero,No,No data,,No
+107,no cpuRequest+no cpuLimit + high cpu + noThrottle + cpuIntensive,No,No,High,No,,,Yes
+108,no cpuRequest+no cpuLimit + high cpu + noThrottle + cpuIntensive + 10%W,No,No,High,No,,10.00%,Yes
+109,no cpuRequest+no cpuLimit + high cpu + noThrottle + cpuIntensive + 100%W,No,No,High,No,,100.00%,Yes
+110,no cpuRequest+no cpuLimit + Idle cpu + noThrottle + 0%W,No,No,Low,No,,0.00%,No
+110,no cpuRequest+no cpuLimit + low (< 0.1) cpu + noThrottle,No,No,Low(< 0.1),No,,,No
+111,no cpuRequest+no cpuLimit + low cpu + noThrottle,No,No,Low,No,,,No
+112,no cpuRequest+no cpuLimit + low cpu + noThrottle + cpuMax spike,No,No,Low,No,Spike,,No
+112,no cpuRequest+no cpuLimit + low cpu + noThrottle + 10%W,No,No,Low,No,,10.00%,No
+113,no cpuRequest+no cpuLimit + low cpu + noThrottle + 100%W,No,No,Low,No,,100.00%,No
+114,no cpuRequest+no cpuLimit + nodata cpu + noThrottle + cpuMax,No,No,No data,No,Data exists,,No
+115,no cpuRequest+no cpuLimit + nodata cpu + noThrottle,No,No,No data,No,No data,,No
+116,no cpuRequest+no cpuLimit + zero cpu + noThrottle + cpuMax,No,No,Zero,No,Data exists,,No
+117,no cpuRequest+no cpuLimit + zero cpu + noThrottle,No,No,Zero,No,No data,,No
+
