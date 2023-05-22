@@ -14,7 +14,7 @@ The monitoring results in this repository include data collected from different 
 
 ## Scenarios
 
-Here are the list of [CPU Scenarios](/cpu-scenarios.csv)
+Here are the list of [CPU Scenarios](./cpu-scenarios.csv)
 
 ### Charts
 
@@ -22,25 +22,25 @@ The following charts visualize the CPU recommendations derived from Kruize for t
 
 1. **Scenario: High cpuRequests - High cpuLimits:**
    
-   ![High cpuRequests - High cpuLimits](/scenario-highcpuRequests-highcpuLimits.png)
+   ![High cpuRequests - High cpuLimits](./scenario-highcpuRequests-highcpuLimits.png)
 
-   ![High cpuRequests - High cpuLimits](/scneario-cpu-highrequests-highlimits.png)
+   ![High cpuRequests - High cpuLimits](./scneario-cpu-highrequests-highlimits.png)
 
 2. **Scenario: No cpuRequests - No cpuLimits:** 
    
-   ![No cpuRequests - No cpuLimits - Minimum cpu](/scneario-cpu-noRequests-noLimits-mincpu.png)
+   ![No cpuRequests - No cpuLimits - Minimum cpu](./scneario-cpu-noRequests-noLimits-mincpu.png)
 
-   ![No cpuRequests - No cpuLimits - Minimum cpu](/scenario-cpu-NoRequests-Nolimits-mincpu-1.png)
+   ![No cpuRequests - No cpuLimits - Minimum cpu](./scenario-cpu-NoRequests-Nolimits-mincpu-1.png)
 
-   ![No cpuRequests - No cpuLimits - low cpu](/scenario-cpu-noRequests-noLimits-lowcpu.png)
+   ![No cpuRequests - No cpuLimits - low cpu](./scenario-cpu-noRequests-noLimits-lowcpu.png)
 
 3. **Scenario: Low cpuRequests - No cpuLimits:** 
 
-   ![Low cpuRequests - No cpuLimits](/scenario-cpu-lowrequests-nolimits-highcpu.png)
+   ![Low cpuRequests - No cpuLimits](./scenario-cpu-lowrequests-nolimits-highcpu.png)
 
 4. **Scenario: cpuRequests same as cpuLimits:**
 
-   ![cpuRequests=cpuLimits - No Throttle](/scenario-cpu-requestssameaslimits-nothrottle.png)
+   ![cpuRequests=cpuLimits - No Throttle](./scenario-cpu-requestssameaslimits-nothrottle.png)
 
-   ![cpuRequests=cpuLimits - High cpu](/scenario-cpu-requestssameaslimits-highcpu.png)
+   ![cpuRequests=cpuLimits - High cpu](./scenario-cpu-requestssameaslimits-highcpu.png)
 
